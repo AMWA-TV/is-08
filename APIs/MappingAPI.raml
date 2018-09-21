@@ -1,0 +1,112 @@
+#%RAML 1.0
+
+# AMWA NMOS Audio Channel Mapping Specification: Mapping API
+# (c) AMWA 2018
+
+title: Mapping
+baseUri: http://example.api.com/x-nmos/mapping/{version}
+version: v1.0
+mediaType: application/json
+types:
+  Base:
+    type: !include schemas/base.json
+  Mappers:
+    type: !include schemas/mappers.json
+  Mapper:
+    type: !include schemas/mapper.json
+  Config:
+    type: !include schemas/mapper_config.json
+  State:
+    type: !include schemas/mapper_state.json
+  Settings:
+    type: !include schemas/mapper_settings.json
+  ErrorSchema:
+    type: !include schemas/error.json
+documentation:
+  - title: Overview
+    content: |
+      The Mapping API is exposed by each NMOS Audio Channel Mapping compatible Device. The API is used to announce the available mapper resources, their capabilities, settings and state and to override the setting during operation.
+
+/:
+  displayName: Base
+  get:
+    description: List of paths available from this API
+    responses:
+      200:
+        body:
+          example: !include ../examples/mappingapi-v1.0-base-get-200.json
+          type: Base
+/mappers:
+  displayName: Mappers
+  get:
+    description: List of the Audio Channel Mapping mapper resources
+    responses:
+      200:
+        body:
+          example: !include ../examples/mappingapi-v1.0-mappers-get-200.json
+          type: Mappers
+  /{mapperId}:
+    uriParameters:
+      mapperId:
+        type: string
+        pattern: "^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    get:
+      description: Get a single mapper
+      responses:
+        200:
+          body:
+            example: !include ../examples/mappingapi-v1.0-mapperid-get-200.json
+            type: Mapper
+        404:
+          description: Returned when the requested Mapper ID does not exist
+          body:
+            type: ErrorSchema
+    /config:
+      displayName: Mapper configuration
+      get:
+        description: Static configuration of the mapper resource
+        responses:
+          200:
+            body:
+              examples:
+                !include ../examples/mappingapi-v1.0-config-simple-get-200.json
+                !include ../examples/mappingapi-v1.0-config-complex-get-200.json
+              type: Type
+    /state:
+      displayName: Mapper state
+      get:
+        description: State of the inputs
+        responses:
+          200:
+            body:
+              examples:
+                !include ../examples/mappingapi-v1.0-state-simple-get-200.json
+                !include ../examples/mappingapi-v1.0-state-complex-get-200.json
+              type: State
+    /settings:
+      displayName: Mapper state
+      get:
+        description: Mapper settings
+        responses:
+          200:
+            body:
+              examples:
+                !include ../examples/mappingapi-v1.0-settings-simple-get-200.json
+                !include ../examples/mappingapi-v1.0-settings-complex-get-200.json
+              type: Settings
+      put:
+        description: Mapper settings
+        body:
+          type: Settings
+          examples:
+            simple: !include ../examples/mappingapi-v1.0-settings-simple-put.json
+            complex: !include ../examples/mappingapi-v1.0-settings-complex-put.json
+        responses:
+          200:
+            description:
+              Returns the state of the settings object after update
+            body:
+              examples:
+                !include ../examples/mappingapi-v1.0-settings-simple-get-200.json
+                !include ../examples/mappingapi-v1.0-settings-complex-get-200.json
+              type: Settings

@@ -1,0 +1,14 @@
+{
+  "$id": "https://www.amwa.tv/audio_channel_mapping/sources.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "array",
+  "description": "A list of Audio Channel Mapping mapper resources",
+  "title": "Collection of Audio Channel Mapping mapper resources",
+  "items": {
+    "description": "IDs of the Audio Channel Mapping compatible mapper resources",
+    "type": "string",
+    "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}\\/$"
+  },
+  "minItems": 0,
+  "uniqueItems": true
+}

@@ -1,0 +1,19 @@
+{
+  "input": {
+    "present": true,
+    "connections": [{
+      "label": "IP Input",
+      "description": "ST 2110-30 input",
+      "receiver_id": "01d3e343-11ef-48c4-8845-a0c5eef2644f"
+    }],
+    "rules": true
+  },
+  "matrix": {
+    "present": true,
+    "input_count": 8,
+    "output_count": 1
+  },
+  "output": {
+    "present": false
+  }
+}

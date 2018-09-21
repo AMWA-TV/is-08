@@ -1,0 +1,16 @@
+{
+  "$id": "https://www.amwa.tv/audio_channel_mapping/base.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "array",
+  "description": "Describes the Audio Channel Mapping base resource",
+  "title": "Audio Channel Mapping base resource",
+  "items": {
+    "type": "string",
+    "enum": [
+      "mappers/"
+    ],
+    "minItems": 1,
+    "maxItems": 1,
+    "uniqueItems": true
+  }
+}

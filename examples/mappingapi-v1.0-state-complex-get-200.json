@@ -1,0 +1,47 @@
+{
+  "input": {
+    "connections": [{
+      "label": "IP IN 1",
+      "sender_id": "8BECC42E-1551-49A2-93B1-26E8BF30D1F0",
+      "groups": [{
+        "channels": [{
+          "symbol": "NSC000",
+          "index": 0
+        }, {
+          "symbol": "NSC001",
+          "index": 1
+        }]
+      }]
+    }, {
+      "label": "IP IN 2",
+      "sender_id": "ed984038-e6c0-4878-aa49-69dc09c8c7ea",
+      "groups": [{
+        "channels": [{
+          "symbol": "NSC000",
+          "index": 0
+        }, {
+          "symbol": "NSC001",
+          "index": 1
+        }, {
+          "symbol": "NSC002",
+          "index": 2
+        }, {
+          "symbol": "NSC003",
+          "index": 3
+        }, {
+          "symbol": "NSC004",
+          "index": 4
+        }, {
+          "symbol": "NSC005",
+          "index": 5
+        }, {
+          "symbol": "NSC006",
+          "index": 6
+        }, {
+          "symbol": "NSC007",
+          "index": 7
+        }]
+      }]
+    }]
+  }
+}

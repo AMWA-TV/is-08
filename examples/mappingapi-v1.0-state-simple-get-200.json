@@ -1,0 +1,29 @@
+{
+  "input": {
+    "connections": [{
+      "label": "IP Input",
+      "sender_id": "3b59f454-2878-403c-adbe-d0008746bacb",
+      "groups": [{
+        "channels": [{
+          "symbol": "NSC000",
+          "index": 0
+        }, {
+          "symbol": "NSC001",
+          "index": 1
+        }, {
+          "symbol": "NSC002",
+          "index": 2
+        }, {
+          "symbol": "NSC003",
+          "index": 3
+        }, {
+          "symbol": "NSC004",
+          "index": 4
+        }, {
+          "symbol": "NSC005",
+          "index": 5
+        }]
+      }]
+    }]
+  }
+}

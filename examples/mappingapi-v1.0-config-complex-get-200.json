@@ -1,0 +1,23 @@
+{
+  "input": {
+    "present": true,
+    "connections": [{
+      "label": "IP IN 1",
+      "description": "The first ST 2110-30 input",
+      "receiver_id": "1f9d7701-17d3-4cc9-bc94-b8115e780415"
+    }, {
+      "label": "IP IN 2",
+      "description": "The second ST 2110-30 input",
+      "receiver_id": "dcda769e-2bb4-458a-9272-b3ad8cd66a59"
+    }],
+    "rules": true
+  },
+  "matrix": {
+    "present": true,
+    "input_count": 16,
+    "output_count": 16
+  },
+  "output": {
+    "present": false
+  }
+}

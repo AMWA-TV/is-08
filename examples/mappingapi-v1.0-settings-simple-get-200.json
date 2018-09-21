@@ -1,0 +1,18 @@
+{
+  "input": {
+    "channels": [
+      {
+        "rules": [
+          {
+            "connection": "IP IN 1",
+            "index": 2
+          },
+          {
+            "connection": "IP IN 1",
+            "index": 0
+          }
+        ]
+      }
+    ]
+  }
+}
