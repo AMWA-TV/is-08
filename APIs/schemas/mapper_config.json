@@ -1,0 +1,93 @@
+{
+  "$id": "https://www.amwa.tv/audio_channel_mapping/mapper_config.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Mapper Configuration",
+  "description": "Configuration of the mapper resource",
+  "required": [
+    "input",
+    "matrix",
+    "output"
+  ],
+  "properties": {
+    "input": {
+      "description": "Input stage configuration",
+      "type": "object",
+      "required": [
+        "present"
+      ],
+      "properties": {
+        "present": {
+          "description": "Does the mapper have the input stage?",
+          "type": "boolean"
+        },
+        "connections": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "label"
+            ],
+            "properties": {
+              "label": {
+                "description": "Name of the input connection",
+                "type": "string"
+              },
+              "description": {
+                "description": "Description of the input connection",
+                "type": "string"
+              },
+              "receiver_id": {
+                "description": "ID of the related NMOS receiver",
+                "type": "string",
+                "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+              }
+            }
+          }
+        },
+        "rules": {
+          "description": "Does the input stage allow channel selection rules?",
+          "type": "boolean"
+        }
+      }
+    },
+    "matrix": {
+      "description": "Mapping matrix configuration",
+      "type": "object",
+      "required": [
+        "present",
+        "input_count",
+        "output_count"
+      ],
+      "properties": {
+        "present": {
+          "description": "Does the mapper have a mapping matrix?",
+          "type": "boolean"
+        },
+        "input_count": {
+          "description": "Maximum number of matrix inputs",
+          "type": "integer",
+          "minimum": 1
+        },
+        "output_count": {
+          "description": "Maximum number of matrix outputs",
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "output": {
+      "description": "Output stage configuration",
+      "type": "object",
+      "required": [
+        "present"
+      ],
+      "properties": {
+        "present": {
+          "description": "Does the mapper have an output stage?",
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

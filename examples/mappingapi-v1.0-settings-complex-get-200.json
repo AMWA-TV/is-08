@@ -2,154 +2,193 @@
   "input": {
     "channels": [
       {
-        "rules": [{
-              "connection": "IP IN 1",
-              "index": 0
-            }
-          ]
-      }, {
-        "rules": [{
-              "connection": "IP IN 1",
-              "index": 1
-            }
-          ]
-      }, {
-        "rules": [{
-              "connection": "IP IN 1",
-              "index": 2
-            }
-          ]
-      }, {
-        "rules": [{
-              "connection": "IP IN 1",
-              "index": 3
-            }
-          ]
-      }, {
-        "rules": [{
-              "connection": "IP IN 1",
-              "index": 4
-            }
-          ]
-      }, {
-        "rules": [{
-              "connection": "IP IN 1",
-              "index": 5
-            }
-          ]
-      }, {
-        "rules": [{
-              "connection": "IP IN 1",
-              "index": 6
-            }
-          ]
-      }, {
-        "rules": [{
-              "connection": "IP IN 1",
-              "index": 7
-            }
-          ]
+        "rules": [
+          {
+            "connection": "IP IN 1",
+            "index": 0
+          }
+        ]
       },
       {
-        "rules": [{
-              "connection": "IP IN 2",
-              "index": 0
-            }
-          ]
-      }, {
-        "rules": [{
-              "connection": "IP IN 2",
-              "index": 1
-            }
-          ]
-      }, {
-        "rules": [{
-              "connection": "IP IN 2",
-              "index": 2
-            }
-          ]
-      }, {
-        "rules": [{
-              "connection": "IP IN 2",
-              "index": 3
-            }
-          ]
-      }, {
-        "rules": [{
-              "connection": "IP IN 2",
-              "index": 4
-            }
-          ]
-      }, {
-        "rules": [{
-              "connection": "IP IN 2",
-              "index": 5
-            }
-          ]
-      }, {
-        "rules": [{
-              "connection": "IP IN 2",
-              "index": 6
-            }
-          ]
-      }, {
-        "rules": [{
-              "connection": "IP IN 2",
-              "index": 7
-            }
-          ]
+        "rules": [
+          {
+            "connection": "IP IN 1",
+            "index": 1
+          }
+        ]
+      },
+      {
+        "rules": [
+          {
+            "connection": "IP IN 1",
+            "index": 2
+          }
+        ]
+      },
+      {
+        "rules": [
+          {
+            "connection": "IP IN 1",
+            "index": 3
+          }
+        ]
+      },
+      {
+        "rules": [
+          {
+            "connection": "IP IN 1",
+            "index": 4
+          }
+        ]
+      },
+      {
+        "rules": [
+          {
+            "connection": "IP IN 1",
+            "index": 5
+          }
+        ]
+      },
+      {
+        "rules": [
+          {
+            "connection": "IP IN 1",
+            "index": 6
+          }
+        ]
+      },
+      {
+        "rules": [
+          {
+            "connection": "IP IN 1",
+            "index": 7
+          }
+        ]
+      },
+      {
+        "rules": [
+          {
+            "connection": "IP IN 2",
+            "index": 0
+          }
+        ]
+      },
+      {
+        "rules": [
+          {
+            "connection": "IP IN 2",
+            "index": 1
+          }
+        ]
+      },
+      {
+        "rules": [
+          {
+            "connection": "IP IN 2",
+            "index": 2
+          }
+        ]
+      },
+      {
+        "rules": [
+          {
+            "connection": "IP IN 2",
+            "index": 3
+          }
+        ]
+      },
+      {
+        "rules": [
+          {
+            "connection": "IP IN 2",
+            "index": 4
+          }
+        ]
+      },
+      {
+        "rules": [
+          {
+            "connection": "IP IN 2",
+            "index": 5
+          }
+        ]
+      },
+      {
+        "rules": [
+          {
+            "connection": "IP IN 2",
+            "index": 6
+          }
+        ]
+      },
+      {
+        "rules": [
+          {
+            "connection": "IP IN 2",
+            "index": 7
+          }
+        ]
       }
     ]
   },
   "matrix": {
-    "outputs": [{
-      "inputs": [
-        {
-          "index": 0
-        }
-      ]
-    }, {
-      "inputs": [
-        {
-          "index": 1
-        }
-      ]
-    }, {
-      "inputs": [
-        {
-          "index": 10
-        }
-      ]
-    }, {
-      "inputs": [
-        {
-          "index": 11
-        }
-      ]
-    }, {
-      "inputs": [
-        {
-          "index": 12
-        }
-      ]
-    }, {
-      "inputs": [
-        {
-          "index": 13
-        }
-      ]
-    }, {
-      "inputs": [
-        {
-          "index": 14
-        }
-      ]
-    }, {
-      "inputs": [
-        {
-          "index": 15
-        }
-      ]
-    }]
+    "outputs": [
+      {
+        "inputs": [
+          {
+            "index": 0
+          }
+        ]
+      },
+      {
+        "inputs": [
+          {
+            "index": 1
+          }
+        ]
+      },
+      {
+        "inputs": [
+          {
+            "index": 10
+          }
+        ]
+      },
+      {
+        "inputs": [
+          {
+            "index": 11
+          }
+        ]
+      },
+      {
+        "inputs": [
+          {
+            "index": 12
+          }
+        ]
+      },
+      {
+        "inputs": [
+          {
+            "index": 13
+          }
+        ]
+      },
+      {
+        "inputs": [
+          {
+            "index": 14
+          }
+        ]
+      },
+      {
+        "inputs": [
+          {
+            "index": 15
+          }
+        ]
+      }
+    ]
   }
 }

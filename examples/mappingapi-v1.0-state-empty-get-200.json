@@ -1,0 +1,17 @@
+{
+  "input": {
+    "connections": [{
+      "label": "IP IN 1",
+      "sender_id": null,
+      "groups": [{
+        "channels": []
+      }]
+    }, {
+      "label": "IP IN 2",
+      "sender_id": null,
+      "groups": [{
+        "channels": []
+      }]
+    }]
+  }
+}

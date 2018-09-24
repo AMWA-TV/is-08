@@ -69,9 +69,9 @@ documentation:
           200:
             body:
               examples:
-                !include ../examples/mappingapi-v1.0-config-simple-get-200.json
-                !include ../examples/mappingapi-v1.0-config-complex-get-200.json
-              type: Type
+                simple: !include ../examples/mappingapi-v1.0-config-simple-get-200.json
+                complex: !include ../examples/mappingapi-v1.0-config-complex-get-200.json
+              type: Config
     /state:
       displayName: Mapper state
       get:
@@ -80,8 +80,9 @@ documentation:
           200:
             body:
               examples:
-                !include ../examples/mappingapi-v1.0-state-simple-get-200.json
-                !include ../examples/mappingapi-v1.0-state-complex-get-200.json
+                simple: !include ../examples/mappingapi-v1.0-state-simple-get-200.json
+                complex: !include ../examples/mappingapi-v1.0-state-complex-get-200.json
+                empty: !include ../examples/mappingapi-v1.0-state-empty-get-200.json
               type: State
     /settings:
       displayName: Mapper state
@@ -91,22 +92,22 @@ documentation:
           200:
             body:
               examples:
-                !include ../examples/mappingapi-v1.0-settings-simple-get-200.json
-                !include ../examples/mappingapi-v1.0-settings-complex-get-200.json
+                simple: !include ../examples/mappingapi-v1.0-settings-simple-get-200.json
+                complex: !include ../examples/mappingapi-v1.0-settings-complex-get-200.json
               type: Settings
       put:
         description: Mapper settings
         body:
           type: Settings
           examples:
-            simple: !include ../examples/mappingapi-v1.0-settings-simple-put.json
-            complex: !include ../examples/mappingapi-v1.0-settings-complex-put.json
+            simple: !include ../examples/mappingapi-v1.0-settings-simple-get-200.json
+            complex: !include ../examples/mappingapi-v1.0-settings-complex-get-200.json
         responses:
           200:
             description:
               Returns the state of the settings object after update
             body:
               examples:
-                !include ../examples/mappingapi-v1.0-settings-simple-get-200.json
-                !include ../examples/mappingapi-v1.0-settings-complex-get-200.json
+                simple: !include ../examples/mappingapi-v1.0-settings-simple-get-200.json
+                complex: !include ../examples/mappingapi-v1.0-settings-complex-get-200.json
               type: Settings

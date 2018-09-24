@@ -1,0 +1,87 @@
+{
+  "$id": "https://www.amwa.tv/audio_channel_mapping/mapper_settings.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Mapper Settings",
+  "description": "Mapper resource settings",
+  "properties": {
+    "input": {
+      "description": "Input stage settings",
+      "type": "object",
+      "required": [
+        "channels"
+      ],
+      "properties": {
+        "channels": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "rules"
+            ],
+            "properties": {
+              "rules": {
+                "description": "Channel identification rules",
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "index"
+                  ],
+                  "properties": {
+                    "connection": {
+                      "description": "Connection name",
+                      "type": "string"
+                    },
+                    "index": {
+                      "description": "Channel index",
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "matrix": {
+      "description": "Mapping matrix settings",
+      "type": "object",
+      "required": [
+        "outputs"
+      ],
+      "properties": {
+        "outputs": {
+          "description": "Mapping arrays for each output",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "inputs"
+            ],
+            "properties": {
+              "inputs": {
+                "description": "List of mapped inputs (Only one allowed in phase 1)",
+                "type": "array",
+                "items": {
+                  "required": [
+                    "index"
+                  ],
+                  "properties": {
+                    "index": {
+                      "description": "Index of the mapped input",
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

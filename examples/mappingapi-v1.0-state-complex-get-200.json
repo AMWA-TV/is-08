@@ -2,7 +2,7 @@
   "input": {
     "connections": [{
       "label": "IP IN 1",
-      "sender_id": "8BECC42E-1551-49A2-93B1-26E8BF30D1F0",
+      "sender_id": "425b25fe-bb3b-4fd6-96a1-753d95ad7119",
       "groups": [{
         "channels": [{
           "symbol": "NSC000",

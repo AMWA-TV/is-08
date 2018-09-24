@@ -1,0 +1,79 @@
+{
+  "$id": "https://www.amwa.tv/audio_channel_mapping/mapper_state.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Mapper State",
+  "description": "Mapper resource input state",
+  "properties": {
+    "input": {
+      "description": "Input stage state",
+      "type": "object",
+      "required": [
+        "connections"
+      ],
+      "properties": {
+        "connections": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "label"
+            ],
+            "properties": {
+              "label": {
+                "description": "Connection label",
+                "type": "string"
+              },
+              "sender_id": {
+                "description": "ID of the connected NMOS sender",
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "groups": {
+                "description": "Channel groups in a stream",
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "channels"
+                  ],
+                  "properties": {
+                    "channels": {
+                      "description": "Audio channels in a group",
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "symbol",
+                          "index"
+                        ],
+                        "properties": {
+                          "symbol": {
+                            "description": "IS-04 compatible audio channel symbol",
+                            "type": "string"
+                          },
+                          "index": {
+                            "description": "Index of the channel in the stream",
+                            "type": "integer",
+                            "minimum": 0
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
