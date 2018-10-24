@@ -28,37 +28,40 @@ documentation:
     responses:
       200:
         body:
-          example: !include ../examples/v1.0-map-root-get-200.json
+          example: !include ../examples/map/v1.0-map-root-get-200.json
   /constraints:
     displayName: Map constraints
     get:
       responses: 
         200:
           body:
-            example: !include ../examples/v1.0-map-constraints-get-200.json
+            example: !include ../examples/map/v1.0-map-constraints-get-200.json
   /table:
     displayName: Mapping table
     get:
       responses:
         200:
           body:
-            example: !include ../examples/v1.0-map-tables-get-200.json
+            example: !include ../examples/map/v1.0-map-tables-get-200.json
+            type: !include schemas/v1.0-map-tables-schema.json
         
     patch:
       body:
-        example: !include ../examples/v1.0-map-tables-patch.json
+        example: !include ../examples/map/v1.0-map-tables-patch.json
+        type: !include schemas/v1.0-map-tables-schema.json
       responses: 
         200:
           body:
-            example: !include ../examples/v1.0-map-tables-patch-200.json
+            example: !include ../examples/map/v1.0-map-tables-patch-200.json
+            type: !include schemas/v1.0-map-tables-schema.json
         400:
           body:
             type: !include schemas/error.json
-            example: !include ../examples/v1.0-map-tables-patch-400.json
+            example: !include ../examples/map/v1.0-map-tables-patch-400.json
         500:
           body:
             type: !include schemas/error.json
-            example: !include ../examples/v1.0-map-tables-patch-500.json
+            example: !include ../examples/map/v1.0-map-tables-patch-500.json
         404:
           description: Returned when the requested resource does not exist            
 /inputs:
@@ -88,10 +91,12 @@ documentation:
       patch:
         body:
           example: !include ../examples/inputs/v1.0-input-name-params-patch.json
+          type: !include schemas/v1.0-input-params-schema.json
         responses:
           200:
             body:
               example: !include ../examples/inputs/v1.0-input-name-params-patch-200.json
+              type: !include schemas/v1.0-input-params-schema.json
           400:
             body:
               type: !include schemas/error.json
@@ -116,7 +121,7 @@ documentation:
     responses: 
       200:
         body:
-          example: !include ../examples/inputs/outputs/v1.0-output-root-get-200.json
+          example: !include ../examples/outputs/v1.0-output-root-get-200.json
       404:
         description: Returned when the requested resource does not exist
   /{outputName}:
@@ -133,14 +138,18 @@ documentation:
           200:
             body:
               example: !include ../examples/outputs/v1.0-output-name-params-get-200.json
+              type: !include schemas/v1.0-output-params-schema.json
           404:
             description: Returned when the requested resource does not exist
       patch:
         body:
           example: !include ../examples/outputs/v1.0-output-name-params-patch.json
+          type: !include schemas/v1.0-output-params-schema.json
         responses: 
           200:
-            example: !include ../examples/outputs/v1.0-output-name-params-patch-200.json
+            body:
+              example: !include ../examples/outputs/v1.0-output-name-params-patch-200.json
+              type: !include schemas/v1.0-output-params-schema.json
           400:
             body:
               type: !include schemas/error.json
