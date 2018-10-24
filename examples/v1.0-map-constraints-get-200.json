@@ -1,0 +1,10 @@
+{
+  "outA": [
+    "input1",
+    "input2",
+    "input3"
+  ],
+  "outB":[
+    "input4"
+  ]
+}

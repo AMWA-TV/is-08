@@ -1,0 +1,169 @@
+#%RAML 1.0
+
+# AMWA NMOS Audo Channel Mapping Specification: Channel Mapping API
+# (c) AMWA 2018
+
+title: Mapping
+baseUri: http://example.api.com/x-nmos/channelmapping/{version}
+version: v1.0
+mediaType: application/json
+
+documentation:
+  - title: Overview
+    content: |
+        Audo channel mapping blurb        
+  - title: Endpoint Discovery
+    content: |
+      The channel mapping API URL for an NMOS Device is advertised in the list of controls for that device in the Node API using type: "urn:x-nmos:control:sr-ctrl/v1.0". This information is populated into the NMOS registry via the standard registration mechanism, so it is discoverable through the Query API (see NMOS Discovery and Registration specification).
+/:
+  displayName: Base
+  get:
+    responses:
+      200:
+        body:
+          example: !include ../examples/v1.0-base-get-200.json
+/map:
+  displayName: Map entity root
+  get:
+    responses:
+      200:
+        body:
+          example: !include ../examples/v1.0-map-root-get-200.json
+  /constraints:
+    displayName: Map constraints
+    get:
+      responses: 
+        200:
+          body:
+            example: !include ../examples/v1.0-map-constraints-get-200.json
+  /table:
+    displayName: Mapping table
+    get:
+      responses:
+        200:
+          body:
+            example: !include ../examples/v1.0-map-tables-get-200.json
+        
+    patch:
+      body:
+        example: !include ../examples/v1.0-map-tables-patch.json
+      responses: 
+        200:
+          body:
+            example: !include ../examples/v1.0-map-tables-patch-200.json
+        400:
+          body:
+            type: !include schemas/error.json
+            example: !include ../examples/v1.0-map-tables-patch-400.json
+        500:
+          body:
+            type: !include schemas/error.json
+            example: !include ../examples/v1.0-map-tables-patch-500.json
+        404:
+          description: Returned when the requested resource does not exist            
+/inputs:
+  displayName: Inputs
+  get:
+    description: List all inputs available
+    responses:
+      200:
+        body:
+          example: !include ../examples/inputs/v1.0-inputs-root-get-200.json
+  /{inputName}:
+    get:
+      responses:
+        200:
+          body:
+            example: !include ../examples/inputs/v1.0-input-name-root-get-200.json
+        404:
+          description: Returned when an the input name does not exist
+    /params:
+      get:
+        responses:
+          200:
+            body:
+              example: !include ../examples/inputs/v1.0-input-name-params-get-200.json
+          404:
+            description: Returned when the requested resource does not exist
+      patch:
+        body:
+          example: !include ../examples/inputs/v1.0-input-name-params-patch.json
+        responses:
+          200:
+            body:
+              example: !include ../examples/inputs/v1.0-input-name-params-patch-200.json
+          400:
+            body:
+              type: !include schemas/error.json
+              example: !include ../examples/inputs/v1.0-input-name-params-patch-400.json
+          500:
+            body:
+              type: !include schemas/error.json
+              example: !include ../examples/inputs/v1.0-input-name-params-patch-500.json
+          404:
+            description: Returned when the requested resource does not exist
+    /caps:
+      get:
+        responses:
+          200:
+            body: !include ../examples/inputs/v1.0-input-name-caps-200.json
+          404:
+            description: Returned when the requested resource does not exist
+/outputs:
+  displayName: Outputs
+  get:
+    description: List all outputs available
+    responses: 
+      200:
+        body:
+          example: !include ../examples/inputs/outputs/v1.0-output-root-get-200.json
+      404:
+        description: Returned when the requested resource does not exist
+  /{outputName}:
+    get:
+      responses:
+        200:
+          body:
+            example: !include ../examples/outputs/v1.0-output-name-root-get-200.json
+        404:
+          description: Returned when the requested resource does not exist
+    /params:
+      get:
+        responses: 
+          200:
+            body:
+              example: !include ../examples/outputs/v1.0-output-name-params-get-200.json
+          404:
+            description: Returned when the requested resource does not exist
+      patch:
+        body:
+          example: !include ../examples/outputs/v1.0-output-name-params-patch.json
+        responses: 
+          200:
+            example: !include ../examples/outputs/v1.0-output-name-params-patch-200.json
+          400:
+            body:
+              type: !include schemas/error.json
+              example: !include ../examples/outputs/v1.0-output-name-params-patch-400.json
+          404:
+            description: Returned when the requested resource does not exist
+          500:
+            body:
+              type: !include schemas/error.json
+              example: !include ../examples/outputs/v1.0-output-name-params-patch-500.json
+    /caps:
+      get:
+        responses: 
+          200:
+            body:
+              example: !include ../examples/outputs/v1.0-output-name-caps-get-200.json
+          404:
+            description: Returned when the requested resource does not exist
+    /sourceID:
+      get:
+        responses: 
+          200:
+            body:
+              example: !include ../examples/outputs/v1.0-output-name-sourceid-get-200.json
+          404:
+            description: Returned when the requested resource does not exist

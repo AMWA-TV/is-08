@@ -1,0 +1,5 @@
+{
+  "code": 500,
+  "error": "Not enough DSP resource available to service request",
+  "debug": null
+}
