@@ -12,9 +12,6 @@ documentation:
   - title: Overview
     content: |
         Audo channel mapping blurb        
-  - title: Endpoint Discovery
-    content: |
-      The channel mapping API URL for an NMOS Device is advertised in the list of controls for that device in the Node API using type: "urn:x-nmos:control:sr-ctrl/v1.0". This information is populated into the NMOS registry via the standard registration mechanism, so it is discoverable through the Query API (see NMOS Discovery and Registration specification).
 /:
   displayName: Base
   get:
@@ -112,6 +109,13 @@ documentation:
         responses:
           200:
             body: !include ../examples/inputs/v1.0-input-name-caps-200.json
+          404:
+            description: Returned when the requested resource does not exist
+    /receiverID:
+      get:
+        responses:
+          200:
+            body: !include ../examples/inputs/v1.0-input-name-receiverID-get-200.json
           404:
             description: Returned when the requested resource does not exist
 /outputs:
