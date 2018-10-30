@@ -19,6 +19,15 @@ documentation:
       200:
         body:
           example: !include ../examples/base-get-200.json
+/io:
+  displayName: Input/Output information
+  get:
+    responses: 
+      200:
+        body:
+          example: !include ../examples/io-get-200.json
+          type: !include schemas/io-response-schema.json
+            
 /map:
   displayName: Map entity root
   get:
@@ -26,14 +35,6 @@ documentation:
       200:
         body:
           example: !include ../examples/map/map-root-get-200.json
-  /constraints:
-    displayName: Map constraints
-    get:
-      responses: 
-        200:
-          body:
-            example: !include ../examples/map/map-constraints-get-200.json
-            type: !include schemas/map-constraints-schema.json
   /staged:
     displayName: Staged mapping table
     get:

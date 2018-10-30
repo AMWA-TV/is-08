@@ -1,5 +1,6 @@
 [
   "params/",
   "caps/",
-  "receiverID"
+  "receiverID",
+  "channels"
 ]
