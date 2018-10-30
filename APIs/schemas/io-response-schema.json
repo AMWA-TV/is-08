@@ -1,0 +1,75 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "IO Information view for entire API",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "inputs",
+    "outputs"
+  ],
+  "properties": {
+    "inputs":{
+      "type": "object",
+      "patternProperties": {
+        "^[0-9]+:[0-9]+$":{
+          "type": "object",
+          "additionalProperties": false,
+          "required":[
+            "receiver_id",
+            "channels"
+          ],
+          "properties": {
+            "receiver_id":{
+              "type": [
+                "string",
+                "null"
+              ],
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+            },
+            "channels":{
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[0-9]+:[0-9]+$"
+              }
+            }
+          }
+        }
+      }  
+    },
+    "outputs":{
+      "type": "object",
+      "patternProperties": {
+        "^[0-9]+:[0-9]+$":{
+          "type": "object",
+          "additionalProperties": false,
+          "required":[
+            "source_id",
+            "channels",
+            "routableInputs"
+          ],
+          "properties": {
+            "source_id":{
+              "type": [
+                "string",
+                "null"
+              ],
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+            },
+            "channels":{
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[0-9]+:[0-9]+$"
+              }
+            },
+            "routableInputs":{
+              "type": "string",
+              "pattern": "^[0-9]+:[0-9]+$"
+            }
+          }
+        }
+      }
+    }
+  }
+}

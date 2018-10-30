@@ -1,0 +1,63 @@
+{
+  "inputs":{
+    "input1":{
+      "receiver_id": "f6b34356-9885-4db8-bdeb-3141e23f443c",
+      "channels":[
+        "channel1",
+        "channel2",
+        "channel3",
+        "channel4"
+      ]
+    },
+    "input2":{
+      "receiver_id": "3286c499-3e78-4125-b0e2-d465354d11e6",
+      "channels":[
+        "FL",
+        "FR",
+        "LS",
+        "RS",
+        "C",
+        "S"
+      ]
+    },
+    "input3":{
+      "receiver_id": "61858ca4-5c9a-43ea-a9c8-aa6eef997b43",
+      "channels":[
+        "L",
+        "R"
+      ]
+    },
+    "input4":{
+      "receiver_id": null,
+      "channels":[
+        "a",
+        "b",
+        "c"
+      ]
+    }
+  },
+  "outputs":{
+    "output1":{
+      "source_id": "beebfc73-6f43-497a-a9c3-c822ea34a4c9",
+      "channels":[
+        "out1",
+        "out2"
+      ],
+      "routableInputs":[
+        "input1",
+        "input2",
+        "input4"
+      ]
+    },
+    "output2":{
+      "source_id": "491de650-c47e-4b70-9597-72ebbf23372a",
+      "channels":[
+        "L",
+        "R"
+      ],
+      "routableInputs":[
+        "input3"
+      ]
+    }
+  }
+}
