@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "array",
+  "description": "List of channels in an input",
+  "title": "Input channel resource",
+  "items": {
+    "type": "object",
+    "required": [
+      "name"
+    ],
+    "properties": {
+      "name": {
+        "type": "string",
+        "pattern": "[a-z A-Z 0-9]+$"
+      }
+    }
+  }
+}

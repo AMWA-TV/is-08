@@ -3,7 +3,6 @@
   "type": "object",
   "title": "Activation resource",
   "description": "Parameters concerned with activation of the map parameters",
-  "type": "object",
   "additionalProperties": false,
   "required": [
     "mode"

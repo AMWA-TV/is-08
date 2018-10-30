@@ -33,6 +33,7 @@ documentation:
         200:
           body:
             example: !include ../examples/map/map-constraints-get-200.json
+            type: !include schemas/map-constraints-schema.json
   /staged:
     displayName: Staged mapping table
     get:
@@ -40,16 +41,16 @@ documentation:
         200:
           body:
             example: !include ../examples/map/map-tables-get-200.json
-            type: !include schemas/map-tables-schema.json
+            type: !include schemas/map-tables-response-schema.json
     patch:
       body:
         example: !include ../examples/map/map-staged-patch-activate-immediate.json
-        type: !include schemas/map-tables-schema.json
+        type: !include schemas/map-tables-request-schema.json
       responses: 
         200:
           body:
             example: !include ../examples/map/map-staged-patch-200.json
-            type: !include schemas/map-tables-schema.json
+            type: !include schemas/map-tables-response-schema.json
         400:
           body:
             type: !include schemas/error.json
@@ -67,7 +68,7 @@ documentation:
         200:
           body:
             example: !include ../examples/map/map-tables-get-200.json
-            type: !include schemas/map-tables-schema.json
+            type: !include schemas/map-tables-response-schema.json
 /inputs:
   displayName: Inputs
   get:
@@ -90,17 +91,18 @@ documentation:
           200:
             body:
               example: !include ../examples/inputs/input-name-params-get-200.json
+              type: !include schemas/input-params-response-schema.json
           404:
             description: Returned when the requested resource does not exist
       patch:
         body:
           example: !include ../examples/inputs/input-name-params-patch.json
-          type: !include schemas/input-params-schema.json
+          type: !include schemas/input-params-request-schema.json
         responses:
           200:
             body:
               example: !include ../examples/inputs/input-name-params-patch-200.json
-              type: !include schemas/input-params-schema.json
+              type: !include schemas/input-params-response-schema.json
           400:
             body:
               type: !include schemas/error.json
@@ -115,14 +117,27 @@ documentation:
       get:
         responses:
           200:
-            body: !include ../examples/inputs/input-name-caps-200.json
+            body:
+              example: !include ../examples/inputs/input-name-caps-200.json
+              type: !include schemas/input-caps-response-schema.json
           404:
             description: Returned when the requested resource does not exist
     /receiverID:
       get:
         responses:
           200:
-            body: !include ../examples/inputs/input-name-receiverID-get-200.json
+            body: 
+              example: !include ../examples/inputs/input-name-receiverID-get-200.json
+              type: !include schemas/input-receiverID-response-schema.json
+          404:
+            description: Returned when the requested resource does not exist
+    /channels:
+      get:
+        responses: 
+          200:
+            body: 
+              example: !include ../examples/inputs/input-name-channels-get-200.json
+              type: !include schemas/input-channels-request-schema.json
           404:
             description: Returned when the requested resource does not exist
 /outputs:
@@ -149,18 +164,18 @@ documentation:
           200:
             body:
               example: !include ../examples/outputs/output-name-params-get-200.json
-              type: !include schemas/output-params-schema.json
+              type: !include schemas/output-params-response-schema.json
           404:
             description: Returned when the requested resource does not exist
       patch:
         body:
           example: !include ../examples/outputs/output-name-params-patch.json
-          type: !include schemas/output-params-schema.json
+          type: !include schemas/output-params-request-schema.json
         responses: 
           200:
             body:
               example: !include ../examples/outputs/output-name-params-patch-200.json
-              type: !include schemas/output-params-schema.json
+              type: !include schemas/output-params-response-schema.json
           400:
             body:
               type: !include schemas/error.json
@@ -177,6 +192,7 @@ documentation:
           200:
             body:
               example: !include ../examples/outputs/output-name-caps-get-200.json
+              type: !include schemas/output-caps-response-schema.json
           404:
             description: Returned when the requested resource does not exist
     /sourceID:
@@ -185,5 +201,15 @@ documentation:
           200:
             body:
               example: !include ../examples/outputs/output-name-sourceid-get-200.json
+              type: !include schemas/output-sourceID-response-schema.json
+          404:
+            description: Returned when the requested resource does not exist
+    /channels:
+      get:
+        responses:
+          200:
+            body:
+              example: !include ../examples/outputs/output-name-channels-get-200.json
+              type: !include schemas/output-channels-request-schema.json
           404:
             description: Returned when the requested resource does not exist

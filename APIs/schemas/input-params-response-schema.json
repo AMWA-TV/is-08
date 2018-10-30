@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "description": "Describes an input's parameters",
+  "title": "Input parameter resource",
+  "additionalProperties": false,
+  "required":[
+    "offset",
+    "numChannels"
+  ],
+  "properties":{
+    "offset":{
+      "type": "integer"
+    },
+    "numChannels":{
+      "type": "integer"
+    }
+  }
+}

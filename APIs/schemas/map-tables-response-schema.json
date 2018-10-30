@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "description": "Describes the map table object",
+  "title": "Map table resource",
+  "additionalProperties": false,
+  "required":[
+    "activation",
+    "map"
+  ],
+  "properties": {
+    "activation": {
+      "$ref": "activation-response-schema.json"
+    },
+    "map":{
+      "patternProperties": {
+        "^[a-z A-Z 0-9]+$": {
+          "description": "Names of outputs",
+          "patternProperties":{
+            "^[a-z A-Z 0-9]+$":{
+              "description": "Names of channels",
+              "required":[
+                "input",
+                "channel"
+              ],
+              "properties": {
+                "input":{
+                  "description": "Name of the input the channel to be connected belongs to. null for disconnected.",
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "channel":{
+                  "description": "Name of channel to be connected.",
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

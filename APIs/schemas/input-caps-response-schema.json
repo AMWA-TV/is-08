@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "description": "Describes an input's capabilities",
+  "title": "Input parameter capability resource",
+  "additionalProperties": false,
+  "properties":{
+    "minChannels":{
+      "type": "integer"
+    },
+    "maxChannels":{
+      "type": "integer"
+    },
+    "offsetStep":{
+      "type": "integer"
+    }
+  }
+}

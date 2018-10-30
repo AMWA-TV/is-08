@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "description": "Describes an outputs's capabilities",
+  "title": "Output parameter capability resource",
+  "additionalProperties": false,
+  "properties":{
+    "minChannels":{
+      "type": "integer"
+    },
+    "maxChannels":{
+      "type": "integer"
+    }
+  }
+}

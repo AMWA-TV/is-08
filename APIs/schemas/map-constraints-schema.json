@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "description": "Object containing all available output",
+  "title": "Map table resource",
+  "patternProperties": {
+    "^[a-z A-Z 0-9]+$": {
+      "type": "array",
+      "description": "List of inputs that can be assigned to this output",
+      "items": {
+        "type": "string",
+        "pattern": "[a-z A-Z 0-9]+$"
+      }
+    }
+  }
+}
