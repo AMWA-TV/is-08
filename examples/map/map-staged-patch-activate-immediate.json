@@ -1,0 +1,22 @@
+{
+    "activation": {
+    "mode": "activate_scheduled_absolute",
+    "requested_time": "1496759200:0"
+  },
+  "map": {
+    "outA":{
+      "channel0":{
+        "input": "input1",
+        "channel": "channel1"
+      },
+      "channel1":{
+        "input": "input1",
+        "channel": "channel2"
+      },
+      "channel2":{
+        "input": "input1",
+        "channel": "channel3"
+      }
+    }
+  }
+}

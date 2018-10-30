@@ -1,0 +1,53 @@
+{
+  "activation": {
+    "mode": null,
+    "requested_time": null,
+    "activation_time": null
+  },
+  "map":{
+    "outA":{
+      "channel0":{
+        "input": "input1",
+        "channel": "channel1"
+      },
+      "channel1":{
+        "input": "input1",
+        "channel": "channel2"
+      },
+      "channel2":{
+        "input": "input1",
+        "channel": "channel3"
+      },
+      "channel3":{
+        "input": "input1",
+        "channel": "channel4"
+      },
+      "channel4":{
+        "input": null,
+        "channel": null
+      },
+      "channel5":{
+        "input": null,
+        "channel": null
+      },
+      "channel6":{
+        "input": null,
+        "channel": null
+      },
+      "channel7":{
+        "input": null,
+        "channel": null
+      }
+    },
+    "outB":{
+      "channel0":{
+        "input": "input4",
+        "channel": "leftChannel"
+      },
+      "channel1":{
+        "input": "input4",
+        "channel": "rightChannel"
+      }
+    }
+  }
+}
