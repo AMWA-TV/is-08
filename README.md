@@ -1,6 +1,6 @@
-# AMWA NMOS Audio Channel Mapping Specification
+# Draft AMWA NMOS Audio Channel Mapping Specification
 
-This repository contains details of this AMWA Specification for controlling aspects of NMOS Devices to effect audio channel mapping.
+This repository contains details of this draft AMWA Specification for controlling aspects of NMOS Devices to effect audio channel mapping.
 
 ## Getting started
 
