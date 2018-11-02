@@ -1,6 +1,6 @@
-# Draft AMWA NMOS Audio Channel Mapping Specification
+# [Work In Progress] AMWA NMOS Audio Channel Mapping Specification
 
-This repository contains details of this draft AMWA Specification for controlling aspects of NMOS Devices to effect audio channel mapping.
+This repository will be used to develop an AMWA NMOS Specification to set channel mapping/selecting/shuffling settings for use with NMOS APIs.
 
 ## Getting started
 
