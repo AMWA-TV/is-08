@@ -43,6 +43,11 @@ documentation:
           body:
             example: !include ../examples/map/map-tables-get-200.json
             type: !include schemas/map-tables-response-schema.json
+    options:
+      description: A pre-flight check generally used for Cross-Origin Resource Sharing (CORS) purposes
+      responses:
+        200:
+        403:
     patch:
       body:
         example: !include ../examples/map/map-staged-patch-activate-immediate.json
@@ -95,6 +100,11 @@ documentation:
               type: !include schemas/input-params-response-schema.json
           404:
             description: Returned when the requested resource does not exist
+      options:
+        description: A pre-flight check generally used for Cross-Origin Resource Sharing (CORS) purposes
+        responses:
+          200:
+          403:            
       patch:
         body:
           example: !include ../examples/inputs/input-name-params-patch.json
@@ -168,6 +178,11 @@ documentation:
               type: !include schemas/output-params-response-schema.json
           404:
             description: Returned when the requested resource does not exist
+      options:
+        description: A pre-flight check generally used for Cross-Origin Resource Sharing (CORS) purposes
+        responses:
+          200:
+          403:            
       patch:
         body:
           example: !include ../examples/outputs/output-name-params-patch.json
