@@ -5,17 +5,17 @@
   },
   "map": {
     "outA":{
-      "channel0":{
+      "0":{
         "input": "input1",
-        "channel": "channel1"
+        "channel_index": 0
       },
-      "channel1":{
+      "1":{
         "input": "input1",
-        "channel": "channel2"
+        "channel_index": 1
       },
-      "channel2":{
+      "2":{
         "input": "input1",
-        "channel": "channel3"
+        "channel_index": 2
       }
     }
   }

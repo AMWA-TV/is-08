@@ -1,0 +1,10 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "array",
+  "description": "List of Inputs that may be routed to a given output",
+  "title": "Routeable Input Resource",
+  "items": {
+    "type": "string",
+    "pattern": "^[a-z A-Z 0-9]+$"
+  }
+}

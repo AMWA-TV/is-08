@@ -3,7 +3,7 @@
 # AMWA NMOS Audo Channel Mapping Specification: Channel Mapping API
 # (c) AMWA 2018
 
-title: Mapping
+title: AMWA NMOS Audio Channel Mapping
 baseUri: http://example.api.com/x-nmos/channelmapping/{version}
 version: v1.0
 mediaType: application/json
@@ -11,7 +11,10 @@ mediaType: application/json
 documentation:
   - title: Overview
     content: |
-        Audo channel mapping blurb        
+      The Audio Channel Mapping API is exposed by NMOS Devices as a standard control interface for management of audio matrix mapping inside Devices.
+  - title: Further Documentation
+    content: |
+      Further normative documentation covering the behaviour of this API is contained in the [docs](../docs) folder of this repository.
 /:
   displayName: Base
   get:
@@ -20,14 +23,14 @@ documentation:
         body:
           example: !include ../examples/base-get-200.json
 /io:
-  displayName: Input/Output information
+  displayName: Input/Output view
   get:
     responses: 
       200:
         body:
           example: !include ../examples/io-get-200.json
           type: !include schemas/io-response-schema.json
-            
+
 /map:
   displayName: Map entity root
   get:
@@ -67,6 +70,12 @@ documentation:
             example: !include ../examples/map/map-tables-patch-500.json
         404:
           description: Returned when the requested resource does not exist
+    options:
+      description: A pre-flight check generally used for Cross-Origin Resource Sharing (CORS) purposes
+      responses:
+        200:
+        403:
+
   /active:
     displayName: Active mapping resource
     get:
@@ -133,13 +142,13 @@ documentation:
               type: !include schemas/input-caps-response-schema.json
           404:
             description: Returned when the requested resource does not exist
-    /receiverID:
+    /parent:
       get:
         responses:
           200:
             body: 
-              example: !include ../examples/inputs/input-name-receiverID-get-200.json
-              type: !include schemas/input-receiverID-response-schema.json
+              example: !include ../examples/inputs/input-name-parent-get-200.json
+              type: !include schemas/input-parent-response-schema.json
           404:
             description: Returned when the requested resource does not exist
     /channels:
@@ -148,7 +157,7 @@ documentation:
           200:
             body: 
               example: !include ../examples/inputs/input-name-channels-get-200.json
-              type: !include schemas/input-channels-request-schema.json
+              type: !include schemas/input-channels-response-schema.json
           404:
             description: Returned when the requested resource does not exist
 /outputs:
@@ -226,6 +235,13 @@ documentation:
           200:
             body:
               example: !include ../examples/outputs/output-name-channels-get-200.json
-              type: !include schemas/output-channels-request-schema.json
+              type: !include schemas/output-channels-response-schema.json
           404:
             description: Returned when the requested resource does not exist
+    /routableinputs:
+      get:
+        responses: 
+          200:
+            body:
+              example: !include ../examples/outputs/output-name-routebaleInputs-get-200.json
+              type: !include schemas/output-routableInputs-response-schema.json

@@ -1,49 +1,77 @@
 {
   "inputs":{
     "input1":{
-      "receiver_id": "f6b34356-9885-4db8-bdeb-3141e23f443c",
+      "parent": {
+        "id": "f6b34356-9885-4db8-bdeb-3141e23f443c",
+        "type": "source"
+      },
       "channels":[
-        "channel1",
-        "channel2",
-        "channel3",
-        "channel4"
-      ]
+        {"label": "channel1"},
+        {"label": "channel2"},
+        {"label": "channel3"},
+        {"label": "channel4"}
+      ],
+      "caps": {
+        "reordering": false,
+        "offsetStep": 2
+      }
     },
     "input2":{
-      "receiver_id": "3286c499-3e78-4125-b0e2-d465354d11e6",
+      "parent": {
+        "id": "3286c499-3e78-4125-b0e2-d465354d11e6",
+        "type": "receiver"
+      },
       "channels":[
-        "FL",
-        "FR",
-        "LS",
-        "RS",
-        "C",
-        "S"
-      ]
+        {"label": "FL"},
+        {"label": "FR"},
+        {"label": "LS"},
+        {"label": "RS"},
+        {"label": "C"},
+        {"label": "S"}
+      ],
+      "caps": {
+        "reordering": true,
+        "offsetStep": null
+      }
     },
     "input3":{
-      "receiver_id": "61858ca4-5c9a-43ea-a9c8-aa6eef997b43",
+      "parent": {
+        "id": null,
+        "type": null
+      },
       "channels":[
-        "L",
-        "R"
-      ]
+        {"label": "L"},
+        {"label": "R"}
+      ],
+      "caps": {
+        "reordering": true,
+        "offsetStep": null
+      }
     },
     "input4":{
-      "receiver_id": null,
+      "parent":{
+        "id": "6dea8109-9e27-49e7-81eb-65a74e964414",
+        "type": "source"
+      },
       "channels":[
-        "a",
-        "b",
-        "c"
-      ]
+        {"label": "a"},
+        {"label": "b"},
+        {"label": "c"}
+      ],
+      "caps": {
+        "reordering": false,
+        "offsetStep": null
+      }
     }
   },
   "outputs":{
     "output1":{
-      "source_id": "beebfc73-6f43-497a-a9c3-c822ea34a4c9",
+      "source_id": "bdebfc73-6f43-497a-a9c3-c822ea34a4c9",
       "channels":[
-        "out1",
-        "out2"
+        {"label": "out1"},
+        {"label": "out2"}
       ],
-      "routableInputs":[
+      "routable_inputs":[
         "input1",
         "input2",
         "input4"
@@ -52,10 +80,10 @@
     "output2":{
       "source_id": "491de650-c47e-4b70-9597-72ebbf23372a",
       "channels":[
-        "L",
-        "R"
+        {"label": "L"},
+        {"label": "R"}
       ],
-      "routableInputs":[
+      "routable_inputs":[
         "input3"
       ]
     }

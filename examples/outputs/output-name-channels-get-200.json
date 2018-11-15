@@ -1,8 +1,8 @@
 [
   {
-    "name": "channel0"
+    "label": "Left Channel"
   },
   {
-    "name": "channel1"
+    "label": "Right Channel"
   }
 ]

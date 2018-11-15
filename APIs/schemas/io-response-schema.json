@@ -15,23 +15,18 @@
           "type": "object",
           "additionalProperties": false,
           "required":[
-            "receiver_id",
+            "parent",
             "channels"
           ],
           "properties": {
-            "receiver_id":{
-              "type": [
-                "string",
-                "null"
-              ],
-              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+            "parent":{
+              "$ref": "input-parent-response-schema.json"
             },
             "channels":{
-              "type": "array",
-              "items": {
-                "type": "string",
-                "pattern": "^[0-9]+:[0-9]+$"
-              }
+              "$ref": "input-channels-response-schema.json"
+            },
+            "caps":{
+              "$ref": "input-caps-response-schema.json"
             }
           }
         }
@@ -50,22 +45,13 @@
           ],
           "properties": {
             "source_id":{
-              "type": [
-                "string",
-                "null"
-              ],
-              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+              "$ref": "output-sourceID-response-schema.json"
             },
             "channels":{
-              "type": "array",
-              "items": {
-                "type": "string",
-                "pattern": "^[0-9]+:[0-9]+$"
-              }
+              "$ref": "output-channels-response-schema.json"
             },
-            "routableInputs":{
-              "type": "string",
-              "pattern": "^[0-9]+:[0-9]+$"
+            "routable_inputs":{
+              "$ref": "output-routableInputs-response-schema.json"
             }
           }
         }

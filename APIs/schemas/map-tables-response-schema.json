@@ -17,11 +17,11 @@
         "^[a-z A-Z 0-9]+$": {
           "description": "Names of outputs",
           "patternProperties":{
-            "^[a-z A-Z 0-9]+$":{
-              "description": "Names of channels",
+            "^(0|([1-9][0-9]*))$":{
+              "description": "Index of channels",
               "required":[
                 "input",
-                "channel"
+                "channel_index"
               ],
               "properties": {
                 "input":{
@@ -31,10 +31,10 @@
                     "null"
                   ]
                 },
-                "channel":{
-                  "description": "Name of channel to be connected.",
+                "channel_index":{
+                  "description": "Index of channel to be connected.",
                   "type": [
-                    "string",
+                    "integer",
                     "null"
                   ]
                 }

@@ -1,5 +1,4 @@
 {
-  "minChannels": 0,
-  "maxChannels": 8,
-  "offsetStep": 4
+  "reordering": true,
+  "offsetStep": 8
 }
