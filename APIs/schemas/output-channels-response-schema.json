@@ -3,6 +3,7 @@
   "type": "array",
   "description": "List of channels in an output",
   "title": "Output channel resource",
+  "minItems": 1,
   "items": {
     "type": "object",
     "required": [

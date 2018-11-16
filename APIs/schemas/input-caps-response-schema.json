@@ -16,7 +16,8 @@
       "type": [
         "integer",
         "null"
-      ]
+      ],
+      "min": 2
     }
   }
 }
