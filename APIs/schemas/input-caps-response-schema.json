@@ -6,13 +6,13 @@
   "additionalProperties": false,
   "required":[
     "reordering",
-    "offsetStep"
+    "offset_step"
   ],
   "properties":{
     "reordering":{
       "type": "boolean"
     },
-    "offsetStep":{
+    "offset_step":{
       "type": [
         "integer",
         "null"

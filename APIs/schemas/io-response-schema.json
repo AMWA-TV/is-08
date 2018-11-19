@@ -14,10 +14,6 @@
         "^[0-9]+:[0-9]+$":{
           "type": "object",
           "additionalProperties": false,
-          "required":[
-            "parent",
-            "channels"
-          ],
           "properties": {
             "parent":{
               "$ref": "input-parent-response-schema.json"
@@ -38,11 +34,6 @@
         "^[0-9]+:[0-9]+$":{
           "type": "object",
           "additionalProperties": false,
-          "required":[
-            "source_id",
-            "channels",
-            "routableInputs"
-          ],
           "properties": {
             "source_id":{
               "$ref": "output-sourceID-response-schema.json"

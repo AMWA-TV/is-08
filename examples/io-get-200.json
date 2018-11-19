@@ -13,7 +13,7 @@
       ],
       "caps": {
         "reordering": false,
-        "offsetStep": 2
+        "offset_step": 2
       }
     },
     "input2":{
@@ -31,7 +31,7 @@
       ],
       "caps": {
         "reordering": true,
-        "offsetStep": null
+        "offset_step": null
       }
     },
     "input3":{
@@ -45,7 +45,7 @@
       ],
       "caps": {
         "reordering": true,
-        "offsetStep": null
+        "offset_step": null
       }
     },
     "input4":{
@@ -60,7 +60,7 @@
       ],
       "caps": {
         "reordering": false,
-        "offsetStep": null
+        "offset_step": null
       }
     }
   },
