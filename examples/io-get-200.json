@@ -6,14 +6,14 @@
         "type": "source"
       },
       "channels":[
-        {"label": "channel1"},
-        {"label": "channel2"},
-        {"label": "channel3"},
-        {"label": "channel4"}
+        {"label": "outA"},
+        {"label": "outB"},
+        {"label": "outC"},
+        {"label": "outD"}
       ],
       "caps": {
         "reordering": false,
-        "offset_step": 2
+        "block_size": 2
       }
     },
     "input2":{
@@ -31,7 +31,7 @@
       ],
       "caps": {
         "reordering": true,
-        "offset_step": null
+        "block_size": null
       }
     },
     "input3":{
@@ -45,7 +45,7 @@
       ],
       "caps": {
         "reordering": true,
-        "offset_step": null
+        "block_size": null
       }
     },
     "input4":{
@@ -60,7 +60,7 @@
       ],
       "caps": {
         "reordering": false,
-        "offset_step": null
+        "block_size": null
       }
     }
   },
@@ -68,8 +68,8 @@
     "output1":{
       "source_id": "bdebfc73-6f43-497a-a9c3-c822ea34a4c9",
       "channels":[
-        {"label": "out1"},
-        {"label": "out2"}
+        {"label": "outA"},
+        {"label": "outB"}
       ],
       "routable_inputs":[
         "input1",
