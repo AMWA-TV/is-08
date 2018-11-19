@@ -31,7 +31,7 @@
       ],
       "caps": {
         "reordering": true,
-        "block_size": null
+        "block_size": 1
       }
     },
     "input3":{
@@ -45,7 +45,7 @@
       ],
       "caps": {
         "reordering": true,
-        "block_size": null
+        "block_size": 1
       }
     },
     "input4":{
@@ -60,7 +60,7 @@
       ],
       "caps": {
         "reordering": false,
-        "block_size": null
+        "block_size": 1
       }
     }
   },
