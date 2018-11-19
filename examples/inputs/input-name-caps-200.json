@@ -1,4 +1,4 @@
 {
   "reordering": true,
-  "offset_step": 8
+  "block_size": 8
 }

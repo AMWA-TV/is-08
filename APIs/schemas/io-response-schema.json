@@ -42,7 +42,7 @@
               "$ref": "output-channels-response-schema.json"
             },
             "routable_inputs":{
-              "$ref": "output-routableInputs-response-schema.json"
+              "$ref": "output-caps-response-schema.json"
             }
           }
         }
