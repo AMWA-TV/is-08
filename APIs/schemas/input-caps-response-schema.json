@@ -13,11 +13,8 @@
       "type": "boolean"
     },
     "block_size":{
-      "type": [
-        "integer",
-        "null"
-      ],
-      "min": 2
+      "type": "integer",
+      "min": 1
     }
   }
 }
