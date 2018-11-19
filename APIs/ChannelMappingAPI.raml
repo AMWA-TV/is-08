@@ -157,10 +157,10 @@ documentation:
               type: !include schemas/output-channels-response-schema.json
           404:
             description: Returned when the requested resource does not exist
-    /routableinputs:
+    /caps:
       get:
         responses: 
           200:
             body:
-              example: !include ../examples/outputs/output-name-routebaleInputs-get-200.json
-              type: !include schemas/output-routableInputs-response-schema.json
+              example: !include ../examples/outputs/output-caps-get-200.json
+              type: !include schemas/output-caps-response-schema.json
