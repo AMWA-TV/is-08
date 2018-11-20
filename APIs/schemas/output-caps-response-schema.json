@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "description": "List of Inputs that may be routed to a given output",
+  "title": "Output capabilities resource",
+  "required":[
+    "routable_inputs"
+  ],
+  "properties": {
+    "routable_inputs":{
+      "items": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "pattern": "^[a-z A-Z 0-9 \\- _]+$"
+      }
+    }
+  }
+}
