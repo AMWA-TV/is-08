@@ -41,7 +41,7 @@
             "channels":{
               "$ref": "output-channels-response-schema.json"
             },
-            "routable_inputs":{
+            "caps":{
               "$ref": "output-caps-response-schema.json"
             }
           }

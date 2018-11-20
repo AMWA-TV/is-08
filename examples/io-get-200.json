@@ -71,11 +71,13 @@
         {"label": "outA"},
         {"label": "outB"}
       ],
-      "routable_inputs":[
-        "input1",
-        "input2",
-        "input4"
-      ]
+      "caps":{
+        "routable_inputs":[
+          "input1",
+          "input2",
+          "input4"
+        ]
+      }
     },
     "output2":{
       "source_id": "491de650-c47e-4b70-9597-72ebbf23372a",
@@ -83,9 +85,11 @@
         {"label": "L"},
         {"label": "R"}
       ],
-      "routable_inputs":[
-        "input3"
-      ]
+      "caps":{
+        "routable_inputs":[
+          "input3"
+        ]
+      }
     }
   }
 }
