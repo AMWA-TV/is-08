@@ -1,5 +1,5 @@
 {
-    "activation": {
+  "activation": {
     "mode": "activate_scheduled_absolute",
     "requested_time": "1496759200:0"
   },
