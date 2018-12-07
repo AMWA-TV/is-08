@@ -59,6 +59,15 @@ documentation:
           body:
             type: !include schemas/error.json
             example: !include ../examples/map/map-tables-patch-400.json
+        423:
+          description: >
+          Returned when the resource is locked because an activation has been scheduled.
+          A resource may be unlocked by setting `mode` in `activation` to `null`, which
+          will cancel the pending activation. This may be done in the same request as a change
+          to other parameters.
+          body:
+            type: !include schemas/error.json
+            example: !include ../examples/map/map-tables-patch-423.json
         500:
           body:
             type: !include schemas/error.json
