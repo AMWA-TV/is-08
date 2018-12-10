@@ -38,38 +38,47 @@ documentation:
       200:
         body:
           example: !include ../examples/map/map-root-get-200.json
-  /staged:
-    displayName: Staged mapping table
+  /activations:
+    displayName: Activation resource
     get:
       responses:
         200:
           body:
-            example: !include ../examples/map/map-tables-get-200.json
-            type: !include schemas/map-tables-response-schema.json
-    patch:
+            example: !include ../examples/map/map-activations-get-200.json
+            type: !include schemas/map-activations-get-response-schema.json
+    post:
       body:
-        example: !include ../examples/map/map-staged-patch-activate-immediate.json
-        type: !include schemas/map-tables-request-schema.json
-      responses: 
+        type: !include schemas/map-activations-request-schema.json
+        example: !include ../examples/map/map-activations-post.json
+      responses:
         200:
           body:
-            example: !include ../examples/map/map-staged-patch-200.json
-            type: !include schemas/map-tables-response-schema.json
+            type: !include schemas/map-activations-post-response-schema.json
+            example: !include ../examples/map/map-activations-post-200.json
         400:
           body:
             type: !include schemas/error.json
-            example: !include ../examples/map/map-tables-patch-400.json
-        500:
-          body:
-            type: !include schemas/error.json
-            example: !include ../examples/map/map-tables-patch-500.json
-        404:
-          description: Returned when the requested resource does not exist
-    options:
-      description: A pre-flight check generally used for Cross-Origin Resource Sharing (CORS) purposes
-      responses:
-        200:
-        403:
+            example: !include ../examples/map/map-activations-post-400.json
+    /{activation-id}:
+      displayName: Individual activation resource
+      get:
+        responses:
+          200:
+            body:
+              example: !include ../examples/map/map-activation-activationid-get-200.json
+              type: !include schemas/map-activations-activationid-get-response-schema.json
+          404:
+            description: Could not find the requested resource
+      delete:
+        responses:
+          204:
+            description: Resource deleted successfully
+          400:
+            body:
+              type: !include schemas/error.json
+              example: !include ../examples/map/map-activation-activationid-delete-400.json
+          404:
+            description: Could not find the requested resource
   /active:
     displayName: Active mapping resource
     get:

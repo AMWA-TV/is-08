@@ -1,0 +1,40 @@
+{
+  "1" :{
+    "activation":{
+      "mode": "activate_scheduled_absolute",
+      "requested_time": "1544448739:0",
+      "activation_time": "1544448739:0"
+    },
+    "action":{
+      "OutA":{
+        "0":{
+          "input": "input1",
+          "channel_index": 2
+        },
+        "3":{
+          "input": "input1",
+          "channel_index": 1
+        }
+      }
+    }
+  },
+  "2" :{
+    "activation":{
+      "mode": "activate_scheduled_relative",
+      "requested_time": "2:0",
+      "activation_time": "1544448736:0"
+    },
+    "action":{
+      "OutA":{
+        "0":{
+          "input": "input2",
+          "channel_index": 1
+        },
+        "3":{
+          "input": "input2",
+          "channel_index": 1
+        }
+      }
+    }
+  }
+}
