@@ -96,7 +96,7 @@ documentation:
         body:
           example: !include ../examples/inputs/inputs-root-get-200.json
           type: !include schemas/input-output-root-schema.json
-  /{inputName}:
+  /{inputId}:
     get:
       responses:
         200:
@@ -151,7 +151,7 @@ documentation:
           type: !include schemas/input-output-root-schema.json
       404:
         description: Returned when the requested resource does not exist
-  /{outputName}:
+  /{outputId}:
     get:
       responses:
         200:
