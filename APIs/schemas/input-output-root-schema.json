@@ -1,0 +1,10 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "array",
+  "description": "List of inputs/outputs",
+  "title": "Input/Outputs root resource",
+  "items": {
+    "type": "string",
+    "pattern": "^[a-zA-Z0-9\\-_]+/$"
+  }
+}
