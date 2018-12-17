@@ -59,6 +59,10 @@ documentation:
           body:
             type: !include schemas/error.json
             example: !include ../examples/map/map-activations-post-400.json
+        423:
+          body:
+            type: !include schemas/error.json
+            example: !include ../examples/map/map-activations-post-423.json
     /{activation-id}:
       displayName: Individual activation resource
       get:
