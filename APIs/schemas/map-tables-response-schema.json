@@ -14,7 +14,7 @@
     },
     "map":{
       "patternProperties": {
-        "^[a-z A-Z 0-9]+$": {
+        "^[a-zA-Z0-9\\-_]+$": {
           "description": "Names of outputs",
           "patternProperties":{
             "^(0|([1-9][0-9]*))$":{
