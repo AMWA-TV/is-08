@@ -1,0 +1,5 @@
+{
+  "code": 423,
+  "error": "Output `OutA` channel 2 is locked by another activations. No changes will be made.",
+  "debug": null
+}
