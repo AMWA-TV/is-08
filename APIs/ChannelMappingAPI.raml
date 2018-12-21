@@ -63,6 +63,11 @@ documentation:
           body:
             type: !include schemas/error.json
             example: !include ../examples/map/map-activations-post-423.json
+    options:
+      description: A pre-flight check generally used for Cross-Origin Resource Sharing (CORS) purposes
+      responses:
+        200:
+        403:
     /{activation-id}:
       displayName: Individual activation resource
       get:
@@ -83,6 +88,11 @@ documentation:
               example: !include ../examples/map/map-activation-activationid-delete-400.json
           404:
             description: Could not find the requested resource
+      options:
+        description: A pre-flight check generally used for Cross-Origin Resource Sharing (CORS) purposes
+        responses:
+          200:
+          403:
   /active:
     displayName: Active mapping resource
     get:
