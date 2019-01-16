@@ -22,6 +22,7 @@ documentation:
       200:
         body:
           example: !include ../examples/base-get-200.json
+          type: !include schemas/base-schema.json
 /io:
   displayName: Input/Output view
   get:
@@ -38,6 +39,7 @@ documentation:
       200:
         body:
           example: !include ../examples/map/map-root-get-200.json
+          type: !include schemas/map-base-schema.json
   /activations:
     displayName: Activation resource
     get:
@@ -116,6 +118,7 @@ documentation:
         200:
           body:
             example: !include ../examples/inputs/input-name-root-get-200.json
+            type: !include schemas/input-base-schema.json
         404:
           description: Returned when an the input name does not exist
     /caps:
@@ -171,6 +174,7 @@ documentation:
         200:
           body:
             example: !include ../examples/outputs/output-name-root-get-200.json
+            type: !include schemas/output-base-schema.json
         404:
           description: Returned when the requested resource does not exist
     /sourceid:
