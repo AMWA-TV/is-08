@@ -14,6 +14,10 @@
       "caps": {
         "reordering": false,
         "block_size": 2
+      },
+      "properties":{
+        "name": "Input 2",
+        "description": "Four channel input 2"
       }
     },
     "input2":{
@@ -32,6 +36,10 @@
       "caps": {
         "reordering": true,
         "block_size": 1
+      },
+      "properties":{
+        "name": "5.1 Input",
+        "description": "Surround sound input"
       }
     },
     "input3":{
@@ -46,6 +54,10 @@
       "caps": {
         "reordering": true,
         "block_size": 1
+      },
+      "properties":{
+        "name": "Stereo Input 1",
+        "description": "Stereo input on rear of unit"
       }
     },
     "input4":{
@@ -61,6 +73,10 @@
       "caps": {
         "reordering": false,
         "block_size": 1
+      },
+      "properties":{
+        "name": "Input 4",
+        "description": "RTP Input"
       }
     }
   },
@@ -77,6 +93,10 @@
           "input2",
           "input4"
         ]
+      },
+      "properties":{
+        "name": "Output 1",
+        "description": "RTP Output One"
       }
     },
     "output2":{
@@ -89,6 +109,10 @@
         "routable_inputs":[
           "input3"
         ]
+      },
+      "properties":{
+        "name": "Stereo Output",
+        "description": "Stereo output on rear of unit"
       }
     }
   }
