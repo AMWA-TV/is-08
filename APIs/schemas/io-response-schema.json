@@ -23,6 +23,9 @@
             },
             "caps":{
               "$ref": "input-caps-response-schema.json"
+            },
+            "properties":{
+              "$ref": "input-properties-schema.json"
             }
           }
         }
@@ -43,6 +46,9 @@
             },
             "caps":{
               "$ref": "output-caps-response-schema.json"
+            },
+            "properties":{
+              "$ref": "output-properties-schema.json"
             }
           }
         }
