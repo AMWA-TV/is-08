@@ -1,13 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "description": "Describes the map table object",
+  "description": "Describes the map for one specific outputId",
   "title": "Map table resource",
-  "additionalProperties": false,
-  "required":[
-    "activation",
-    "map"
-  ],
   "properties": {
     "activation": {
       "$ref": "activation-response-schema.json"

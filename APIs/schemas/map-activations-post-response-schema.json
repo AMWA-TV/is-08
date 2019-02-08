@@ -13,35 +13,7 @@
           "$ref": "activation-response-schema.json"
         },
         "action:":{
-          "^[a-z A-Z 0-9 \\- _]+$": {
-            "description": "Names of outputs",
-            "patternProperties":{
-              "^(0|([1-9][0-9]*))$":{
-                "description": "Index of channels",
-                "required":[
-                  "input",
-                  "channel_index"
-                ],
-                "properties": {
-                  "input":{
-                    "description": "Name of the input the channel to be connected belongs to. null for disconnected.",
-                    "pattern": "^[a-z A-Z 0-9 \\- _]+$",
-                    "type": [
-                      "string",
-                      "null"
-                    ]
-                  },
-                  "channel_index":{
-                    "description": "Index of channel to be connected.",
-                    "type": [
-                      "integer",
-                      "null"
-                    ]
-                  }
-                }
-              }
-            }
-          }
+          "$ref": "map-tableentry-schema.json"
         }
       }
     }
