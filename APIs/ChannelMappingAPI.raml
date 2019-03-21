@@ -26,7 +26,7 @@ documentation:
 /io:
   displayName: Input/Output view
   get:
-    responses: 
+    responses:
       200:
         body:
           example: !include ../examples/io-get-200.json
@@ -103,6 +103,17 @@ documentation:
           body:
             example: !include ../examples/map/map-tables-get-200.json
             type: !include schemas/map-tables-response-schema.json
+    /{outputId}:
+      displayName: subset of the active mapping resource related to the specified output
+      description: This resource allows a controller to fetch only the section of the map related to the named output, without the need to fetch the entire map.
+      get:
+        responses:
+          200:
+            body:
+              example: !include ../examples/map/map-activewithid-get-200.json
+              type: !include schemas/map-activewithid-response-schema.json
+          404:
+            description: Returned when the requested resource does not exist
 /inputs:
   displayName: Inputs
   get:
@@ -134,16 +145,16 @@ documentation:
       get:
         responses:
           200:
-            body: 
+            body:
               example: !include ../examples/inputs/input-name-parent-get-200.json
               type: !include schemas/input-parent-response-schema.json
           404:
             description: Returned when the requested resource does not exist
     /channels:
       get:
-        responses: 
+        responses:
           200:
-            body: 
+            body:
               example: !include ../examples/inputs/input-name-channels-get-200.json
               type: !include schemas/input-channels-response-schema.json
           404:
@@ -161,7 +172,7 @@ documentation:
   displayName: Outputs
   get:
     description: List all outputs available
-    responses: 
+    responses:
       200:
         body:
           example: !include ../examples/outputs/output-root-get-200.json
@@ -179,7 +190,7 @@ documentation:
           description: Returned when the requested resource does not exist
     /sourceid:
       get:
-        responses: 
+        responses:
           200:
             body:
               example: !include ../examples/outputs/output-name-sourceid-get-200.json
@@ -197,7 +208,7 @@ documentation:
             description: Returned when the requested resource does not exist
     /caps:
       get:
-        responses: 
+        responses:
           200:
             body:
               example: !include ../examples/outputs/output-name-caps-get-200.json

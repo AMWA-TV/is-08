@@ -1,0 +1,12 @@
+{
+  "outB":{
+      "0":{
+        "input": "input4",
+        "channel_index": 0
+      },
+      "1":{
+        "input": "input4",
+        "channel_index": 1
+      }
+    }
+}
