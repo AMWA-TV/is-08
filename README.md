@@ -1,6 +1,8 @@
-# [Work In Progress] AMWA NMOS Audio Channel Mapping Specification
+# AMWA IS-08 NMOS Audio Channel Mapping Specification
 
-This repository will be used to develop an AMWA NMOS Specification to set channel mapping/selecting/shuffling settings for use with NMOS APIs.
+This repository provides an AMWA NMOS Specification to set channel mapping/selecting/shuffling settings for use with NMOS APIs.
+
+For an HTML rendering of this Specification see https://amwa-tv.github.io/nmos-audio-channel-mapping
 
 ## Getting started
 
