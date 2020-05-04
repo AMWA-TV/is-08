@@ -32,7 +32,7 @@
       }]
     },
     "activation_time": {
-      "description": "String formatted TAI timestamp (<seconds>:<nanoseconds>) indicating the absolute time the receiver will or did actually activate for scheduled activations, or the time activation occurred for immediate activations. For immediate activations this property will be the time the activation actually occurred in the response to the POST request.",
+      "description": "String formatted TAI timestamp (<seconds>:<nanoseconds>) indicating the absolute time the channel mapping will or did actually activate for scheduled activations, or the time activation occurred for immediate activations. For immediate activations this property will be the time the activation actually occurred in the response to the POST request.",
       "anyOf": [{
         "type": "string",
         "pattern": "^[0-9]+:[0-9]+$"
