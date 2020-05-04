@@ -5,24 +5,24 @@
   "title": "Map table entry",
   "patternProperties": {
     "^[a-zA-Z0-9\\-_]+$": {
-      "description": "Names of the output",
+      "description": "Unique identifiers of the outputs",
       "patternProperties":{
         "^(0|([1-9][0-9]*))$":{
-          "description": "Index of channels",
+          "description": "Indexes of channels",
           "required":[
             "input",
             "channel_index"
           ],
           "properties": {
             "input":{
-              "description": "Name of the input the channel to be connected belongs to. null for disconnected.",
+              "description": "Unique identifier of the input to which the channel to be routed belongs. null for unrouted.",
               "type": [
                 "string",
                 "null"
               ]
             },
             "channel_index":{
-              "description": "Index of channel to be connected.",
+              "description": "Index of the input channel to be routed. null for unrouted.",
               "type": [
                 "integer",
                 "null"
