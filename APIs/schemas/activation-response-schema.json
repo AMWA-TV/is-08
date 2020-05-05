@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "description": "Parameters concerned with activation of the transport parameters",
+  "description": "Parameters concerned with activation of the channel mapping",
   "type": "object",
   "additionalProperties": false,
   "required": [
