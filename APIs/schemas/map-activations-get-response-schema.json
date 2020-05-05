@@ -3,10 +3,15 @@
   "title": "Activations endpoint",
   "description": "List of all currently pending activations",
   "type": "object",
+  "additionalPropertes": false,
   "patternProperties": {
     "^[0-9]+$": {
       "type": "object",
       "additionalPropertes": false,
+      "required": [
+        "activation",
+        "action"
+      ],
       "properties": {
         "activation":{
           "$ref": "activation-response-schema.json"
