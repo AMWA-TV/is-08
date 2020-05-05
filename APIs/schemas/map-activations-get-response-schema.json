@@ -5,7 +5,7 @@
   "type": "object",
   "additionalPropertes": false,
   "patternProperties": {
-    "^[0-9]+$": {
+    "^[a-zA-Z0-9\\-_]+$": {
       "type": "object",
       "additionalPropertes": false,
       "required": [

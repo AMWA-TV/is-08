@@ -6,7 +6,7 @@
   "additionalPropertes": false,
   "maxProperties": 1,
   "patternProperties": {
-    "^[0-9]+$": {
+    "^[a-zA-Z0-9\\-_]+$": {
       "type": "object",
       "additionalPropertes": false,
       "required": [
