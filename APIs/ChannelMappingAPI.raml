@@ -3,15 +3,15 @@
 # AMWA NMOS Audo Channel Mapping Specification: Channel Mapping API
 # (c) AMWA 2018
 
-title: AMWA NMOS Audio Channel Mapping
-baseUri: http://example.api.com/x-nmos/channelmapping/{version}
+title: Channel Mapping
+baseUri: http://api.example.com/x-nmos/channelmapping/{version}
 version: v1.0
 mediaType: application/json
 
 documentation:
   - title: Overview
     content: |
-      The Audio Channel Mapping API is exposed by NMOS Devices as a standard control interface for management of audio matrix mapping inside Devices.
+      The Channel Mapping API is exposed by NMOS Devices as a standard control interface for management of audio matrix mapping inside Devices.
   - title: Further Documentation
     content: |
       Further normative documentation covering the behaviour of this API is contained in the [docs](../docs) folder of this repository.
@@ -57,6 +57,10 @@ documentation:
           body:
             type: !include schemas/map-activations-post-response-schema.json
             example: !include ../examples/map/map-activations-post-200.json
+        202:
+          body:
+            type: !include schemas/map-activations-post-response-schema.json
+            example: !include ../examples/map/map-activations-post-200.json
         400:
           body:
             type: !include schemas/error.json
@@ -70,7 +74,7 @@ documentation:
       responses:
         200:
         403:
-    /{activation-id}:
+    /{activationId}:
       displayName: Individual activation resource
       get:
         responses:
@@ -84,10 +88,6 @@ documentation:
         responses:
           204:
             description: Resource deleted successfully
-          400:
-            body:
-              type: !include schemas/error.json
-              example: !include ../examples/map/map-activation-activationid-delete-400.json
           404:
             description: Could not find the requested resource
       options:

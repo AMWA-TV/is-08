@@ -3,6 +3,10 @@
   "type": "object",
   "description": "Describes the map for one specific outputId",
   "title": "Map table resource",
+  "additionalProperties": false,
+  "required": [
+    "map"
+  ],
   "properties": {
     "activation": {
       "$ref": "activation-response-schema.json"
