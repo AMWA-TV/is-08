@@ -18,6 +18,7 @@ documentation:
 /:
   displayName: Base
   get:
+    description: List of paths available from this API
     responses:
       200:
         body:
@@ -26,6 +27,7 @@ documentation:
 /io:
   displayName: Input/Output view
   get:
+    description: Get a view on all Inputs and Outputs
     responses:
       200:
         body:
@@ -33,39 +35,51 @@ documentation:
           type: !include schemas/io-response-schema.json
 
 /map:
-  displayName: Map entity root
+  displayName: Map root
   get:
+    description: List of paths available from this API endpoint
     responses:
       200:
         body:
           example: !include ../examples/map/map-root-get-200.json
           type: !include schemas/map-base-schema.json
   /activations:
-    displayName: Activation resource
+    displayName: Activations
     get:
+      description: List pending scheduled activations
       responses:
         200:
           body:
             example: !include ../examples/map/map-activations-get-200.json
             type: !include schemas/map-activations-get-response-schema.json
     post:
+      description: Create a new activation
       body:
         type: !include schemas/map-activations-request-schema.json
         example: !include ../examples/map/map-activations-post.json
       responses:
         200:
+          description: >
+            A 200 response is returned when a request for an immediate activation is accepted.
           body:
             type: !include schemas/map-activations-post-response-schema.json
             example: !include ../examples/map/map-activations-post-200.json
         202:
+          description: >
+            A 202 response is returned when a request for a scheduled activation is accepted, to indicate
+            that while the request itself was acceptable it has not yet been acted upon by the API.
           body:
             type: !include schemas/map-activations-post-response-schema.json
             example: !include ../examples/map/map-activations-post-200.json
         400:
+          description: >
+            A 400 response is returned, for example, when the request did not meet the schema.
           body:
             type: !include schemas/error.json
             example: !include ../examples/map/map-activations-post-400.json
         423:
+          description: >
+            A 423 response is returned when a conflicting activation has been scheduled.
           body:
             type: !include schemas/error.json
             example: !include ../examples/map/map-activations-post-423.json
@@ -75,12 +89,12 @@ documentation:
         200:
         403:
     /{activationId}:
-      displayName: Individual activation resource
       uriParameters:
         activationId:
           type: string
           pattern: "^[a-zA-Z0-9\\-_]+$"
       get:
+        description: Get a single pending scheduled activation
         responses:
           200:
             body:
@@ -89,6 +103,7 @@ documentation:
           404:
             description: Could not find the requested resource
       delete:
+        description: Cancel a pending scheduled activation
         responses:
           204:
             description: Resource deleted successfully
@@ -100,21 +115,23 @@ documentation:
           200:
           403:
   /active:
-    displayName: Active mapping resource
+    displayName: Active Map
     get:
+      description: Get a view of the entire active map
       responses:
         200:
           body:
             example: !include ../examples/map/map-tables-get-200.json
             type: !include schemas/map-tables-response-schema.json
     /{outputId}:
-      displayName: subset of the active mapping resource related to the specified output
-      description: This resource allows a controller to fetch only the section of the map related to the named output, without the need to fetch the entire map.
       uriParameters:
         outputId:
           type: string
           pattern: "^[a-zA-Z0-9\\-_]+$"
       get:
+        description: |
+          Get the active map for the specified output.
+          This resource allows a controller to fetch only the section of the map related to the specified output, without the need to fetch the entire map.
         responses:
           200:
             body:
@@ -137,15 +154,18 @@ documentation:
         type: string
         pattern: "^[a-zA-Z0-9\\-_]+$"
     get:
+      description: List of paths available from this API endpoint
       responses:
         200:
           body:
             example: !include ../examples/inputs/input-name-root-get-200.json
             type: !include schemas/input-base-schema.json
         404:
-          description: Returned when an the input name does not exist
+          description: Returned when the requested resource does not exist
     /caps:
+      displayName: Input Capabilities
       get:
+        description: Get information about the specified Input's capabilities, such as routing constraints
         responses:
           200:
             body:
@@ -154,7 +174,9 @@ documentation:
           404:
             description: Returned when the requested resource does not exist
     /parent:
+      displayName: Input Parent
       get:
+        description: Get information about the origin of the audio associated with the specified Input
         responses:
           200:
             body:
@@ -163,7 +185,9 @@ documentation:
           404:
             description: Returned when the requested resource does not exist
     /channels:
+      displayName: Input Channels
       get:
+        description: Get information about the specified Input's channels, such as human-readable labels
         responses:
           200:
             body:
@@ -172,7 +196,9 @@ documentation:
           404:
             description: Returned when the requested resource does not exist
     /properties:
+      displayName: Input Properties
       get:
+        description: Get information about the specified Input, such as a human-readable name and description
         responses:
           200:
             body:
@@ -195,6 +221,7 @@ documentation:
         type: string
         pattern: "^[a-zA-Z0-9\\-_]+$"
     get:
+      description: List of paths available from this API endpoint
       responses:
         200:
           body:
@@ -203,7 +230,9 @@ documentation:
         404:
           description: Returned when the requested resource does not exist
     /sourceid:
+      displayName: Output Source ID
       get:
+        description: Get the ID of the Source associated with the specified Output
         responses:
           200:
             body:
@@ -212,7 +241,9 @@ documentation:
           404:
             description: Returned when the requested resource does not exist
     /channels:
+      displayName: Output Channels
       get:
+        description: Get information about the specified Output's channels, such as human-readable labels
         responses:
           200:
             body:
@@ -221,7 +252,9 @@ documentation:
           404:
             description: Returned when the requested resource does not exist
     /caps:
+      displayName: Output Capabilities
       get:
+        description: Get information about the specified Output's capabilities, such as routing constraints
         responses:
           200:
             body:
@@ -230,7 +263,9 @@ documentation:
           404:
             description: Returned when the requested resource does not exist
     /properties:
+      displayName: Output Properties
       get:
+        description: Get information about the specified Output, such as a human-readable name and description
         responses:
           200:
             body:
