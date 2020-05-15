@@ -35,13 +35,13 @@ documentation:
           type: !include schemas/io-response-schema.json
 
 /map:
-  displayName: Map root
+  displayName: Map
   get:
     description: List of paths available from this API endpoint
     responses:
       200:
         body:
-          example: !include ../examples/map/map-root-get-200.json
+          example: !include ../examples/map/map-base-get-200.json
           type: !include schemas/map-base-schema.json
   /activations:
     displayName: Activations
@@ -55,7 +55,7 @@ documentation:
     post:
       description: Create a new activation
       body:
-        type: !include schemas/map-activations-request-schema.json
+        type: !include schemas/map-activations-post-request-schema.json
         example: !include ../examples/map/map-activations-post.json
       responses:
         200:
@@ -98,8 +98,8 @@ documentation:
         responses:
           200:
             body:
-              example: !include ../examples/map/map-activation-activationid-get-200.json
-              type: !include schemas/map-activations-activationid-get-response-schema.json
+              example: !include ../examples/map/map-activations-activation-get-200.json
+              type: !include schemas/map-activations-activation-get-response-schema.json
           404:
             description: Could not find the requested resource
       delete:
@@ -121,8 +121,8 @@ documentation:
       responses:
         200:
           body:
-            example: !include ../examples/map/map-tables-get-200.json
-            type: !include schemas/map-tables-response-schema.json
+            example: !include ../examples/map/map-active-get-200.json
+            type: !include schemas/map-active-response-schema.json
     /{outputId}:
       uriParameters:
         outputId:
@@ -135,8 +135,8 @@ documentation:
         responses:
           200:
             body:
-              example: !include ../examples/map/map-activewithid-get-200.json
-              type: !include schemas/map-activewithid-response-schema.json
+              example: !include ../examples/map/map-active-output-get-200.json
+              type: !include schemas/map-active-output-response-schema.json
           404:
             description: Returned when the requested resource does not exist
 /inputs:
@@ -146,8 +146,8 @@ documentation:
     responses:
       200:
         body:
-          example: !include ../examples/inputs/inputs-root-get-200.json
-          type: !include schemas/input-output-root-schema.json
+          example: !include ../examples/inputs/inputs-base-get-200.json
+          type: !include schemas/inputs-outputs-base-schema.json
   /{inputId}:
     uriParameters:
       inputId:
@@ -158,7 +158,7 @@ documentation:
       responses:
         200:
           body:
-            example: !include ../examples/inputs/input-name-root-get-200.json
+            example: !include ../examples/inputs/input-base-get-200.json
             type: !include schemas/input-base-schema.json
         404:
           description: Returned when the requested resource does not exist
@@ -169,7 +169,7 @@ documentation:
         responses:
           200:
             body:
-              example: !include ../examples/inputs/input-name-caps-200.json
+              example: !include ../examples/inputs/input-caps-get-200.json
               type: !include schemas/input-caps-response-schema.json
           404:
             description: Returned when the requested resource does not exist
@@ -180,7 +180,7 @@ documentation:
         responses:
           200:
             body:
-              example: !include ../examples/inputs/input-name-parent-get-200.json
+              example: !include ../examples/inputs/input-parent-get-200.json
               type: !include schemas/input-parent-response-schema.json
           404:
             description: Returned when the requested resource does not exist
@@ -191,7 +191,7 @@ documentation:
         responses:
           200:
             body:
-              example: !include ../examples/inputs/input-name-channels-get-200.json
+              example: !include ../examples/inputs/input-channels-get-200.json
               type: !include schemas/input-channels-response-schema.json
           404:
             description: Returned when the requested resource does not exist
@@ -202,7 +202,7 @@ documentation:
         responses:
           200:
             body:
-              example: !include ../examples/inputs/input-name-properties-get-200.json
+              example: !include ../examples/inputs/input-properties-get-200.json
               type: !include schemas/input-properties-schema.json
           404:
             description: Returned when the requested resource does not exist
@@ -213,8 +213,8 @@ documentation:
     responses:
       200:
         body:
-          example: !include ../examples/outputs/output-root-get-200.json
-          type: !include schemas/input-output-root-schema.json
+          example: !include ../examples/outputs/outputs-base-get-200.json
+          type: !include schemas/inputs-outputs-base-schema.json
   /{outputId}:
     uriParameters:
       outputId:
@@ -225,7 +225,7 @@ documentation:
       responses:
         200:
           body:
-            example: !include ../examples/outputs/output-name-root-get-200.json
+            example: !include ../examples/outputs/output-base-get-200.json
             type: !include schemas/output-base-schema.json
         404:
           description: Returned when the requested resource does not exist
@@ -236,8 +236,8 @@ documentation:
         responses:
           200:
             body:
-              example: !include ../examples/outputs/output-name-sourceid-get-200.json
-              type: !include schemas/output-sourceID-response-schema.json
+              example: !include ../examples/outputs/output-sourceid-get-200.json
+              type: !include schemas/output-sourceid-response-schema.json
           404:
             description: Returned when the requested resource does not exist
     /channels:
@@ -247,7 +247,7 @@ documentation:
         responses:
           200:
             body:
-              example: !include ../examples/outputs/output-name-channels-get-200.json
+              example: !include ../examples/outputs/output-channels-get-200.json
               type: !include schemas/output-channels-response-schema.json
           404:
             description: Returned when the requested resource does not exist
@@ -258,7 +258,7 @@ documentation:
         responses:
           200:
             body:
-              example: !include ../examples/outputs/output-name-caps-get-200.json
+              example: !include ../examples/outputs/output-caps-get-200.json
               type: !include schemas/output-caps-response-schema.json
           404:
             description: Returned when the requested resource does not exist
@@ -269,7 +269,7 @@ documentation:
         responses:
           200:
             body:
-              example: !include ../examples/outputs/output-name-properties-get-200.json
+              example: !include ../examples/outputs/output-properties-get-200.json
               type: !include schemas/output-properties-schema.json
           404:
             description: Returned when the requested resource does not exist
