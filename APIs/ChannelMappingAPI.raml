@@ -189,8 +189,6 @@ documentation:
         body:
           example: !include ../examples/outputs/output-root-get-200.json
           type: !include schemas/input-output-root-schema.json
-      404:
-        description: Returned when the requested resource does not exist
   /{outputId}:
     uriParameters:
       outputId:
@@ -229,6 +227,8 @@ documentation:
             body:
               example: !include ../examples/outputs/output-name-caps-get-200.json
               type: !include schemas/output-caps-response-schema.json
+          404:
+            description: Returned when the requested resource does not exist
     /properties:
       get:
         responses:
