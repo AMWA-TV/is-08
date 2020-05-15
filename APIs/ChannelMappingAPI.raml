@@ -76,6 +76,10 @@ documentation:
         403:
     /{activationId}:
       displayName: Individual activation resource
+      uriParameters:
+        activationId:
+          type: string
+          pattern: "^[a-zA-Z0-9\\-_]+$"
       get:
         responses:
           200:
@@ -106,6 +110,10 @@ documentation:
     /{outputId}:
       displayName: subset of the active mapping resource related to the specified output
       description: This resource allows a controller to fetch only the section of the map related to the named output, without the need to fetch the entire map.
+      uriParameters:
+        outputId:
+          type: string
+          pattern: "^[a-zA-Z0-9\\-_]+$"
       get:
         responses:
           200:
@@ -124,6 +132,10 @@ documentation:
           example: !include ../examples/inputs/inputs-root-get-200.json
           type: !include schemas/input-output-root-schema.json
   /{inputId}:
+    uriParameters:
+      inputId:
+        type: string
+        pattern: "^[a-zA-Z0-9\\-_]+$"
     get:
       responses:
         200:
@@ -180,6 +192,10 @@ documentation:
       404:
         description: Returned when the requested resource does not exist
   /{outputId}:
+    uriParameters:
+      outputId:
+        type: string
+        pattern: "^[a-zA-Z0-9\\-_]+$"
     get:
       responses:
         200:
