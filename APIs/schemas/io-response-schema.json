@@ -39,7 +39,7 @@
           "additionalProperties": false,
           "properties": {
             "source_id":{
-              "$ref": "output-sourceID-response-schema.json"
+              "$ref": "output-sourceid-response-schema.json"
             },
             "channels":{
               "$ref": "output-channels-response-schema.json"
