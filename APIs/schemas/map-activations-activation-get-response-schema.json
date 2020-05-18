@@ -13,7 +13,7 @@
       "$ref": "activation-response-schema.json"
     },
     "action:":{
-      "$ref": "map-tableentry-schema.json"
+      "$ref": "map-entry-schema.json"
     }
   }
 }
