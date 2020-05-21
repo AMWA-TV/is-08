@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "description": "Describes the map table object",
-  "title": "Map table resource",
+  "description": "Describes the map for all outputs",
+  "title": "Map resource",
   "additionalProperties": false,
   "required":[
     "activation",
@@ -13,7 +13,7 @@
       "$ref": "activation-response-schema.json"
     },
     "map":{
-      "$ref": "map-entry-schema.json"
+      "$ref": "map-entries-schema.json"
     }
   }
 }

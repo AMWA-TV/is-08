@@ -1,8 +1,9 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "description": "Describes one map table entry",
-  "title": "Map table entry",
+  "description": "Describes the map table entries",
+  "title": "Map table entries",
+  "additionalProperties": false,
   "patternProperties": {
     "^[a-zA-Z0-9\\-_]+$": {
       "description": "Unique identifiers of the outputs",
