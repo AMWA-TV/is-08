@@ -6,10 +6,10 @@
   "items": {
     "type": "string",
     "enum": [
-      "caps/",
+      "properties/",
       "parent/",
       "channels/",
-      "properties/"
+      "caps/"
     ]
   },
   "minItems": 4,

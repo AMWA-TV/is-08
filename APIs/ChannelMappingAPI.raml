@@ -24,16 +24,140 @@ documentation:
         body:
           example: !include ../examples/base-get-200.json
           type: !include schemas/base-schema.json
-/io:
-  displayName: Input/Output view
+/inputs:
+  displayName: Inputs
   get:
-    description: Get a view on all Inputs and Outputs
+    description: List all inputs available
     responses:
       200:
         body:
-          example: !include ../examples/io-get-200.json
-          type: !include schemas/io-response-schema.json
-
+          example: !include ../examples/inputs/inputs-base-get-200.json
+          type: !include schemas/inputs-outputs-base-schema.json
+  /{inputId}:
+    uriParameters:
+      inputId:
+        type: string
+        pattern: "^[a-zA-Z0-9\\-_]+$"
+    get:
+      description: List of paths available from this API endpoint
+      responses:
+        200:
+          body:
+            example: !include ../examples/inputs/input-base-get-200.json
+            type: !include schemas/input-base-schema.json
+        404:
+          description: Returned when the requested resource does not exist
+    /properties:
+      displayName: Input Properties
+      get:
+        description: Get information about the specified Input, such as a human-readable name and description
+        responses:
+          200:
+            body:
+              example: !include ../examples/inputs/input-properties-get-200.json
+              type: !include schemas/input-properties-schema.json
+          404:
+            description: Returned when the requested resource does not exist
+    /parent:
+      displayName: Input Parent
+      get:
+        description: Get information about the origin of the audio associated with the specified Input
+        responses:
+          200:
+            body:
+              example: !include ../examples/inputs/input-parent-get-200.json
+              type: !include schemas/input-parent-response-schema.json
+          404:
+            description: Returned when the requested resource does not exist
+    /channels:
+      displayName: Input Channels
+      get:
+        description: Get information about the specified Input's channels, such as human-readable labels
+        responses:
+          200:
+            body:
+              example: !include ../examples/inputs/input-channels-get-200.json
+              type: !include schemas/input-channels-response-schema.json
+          404:
+            description: Returned when the requested resource does not exist
+    /caps:
+      displayName: Input Capabilities
+      get:
+        description: Get information about the specified Input's capabilities, such as routing constraints
+        responses:
+          200:
+            body:
+              example: !include ../examples/inputs/input-caps-get-200.json
+              type: !include schemas/input-caps-response-schema.json
+          404:
+            description: Returned when the requested resource does not exist
+/outputs:
+  displayName: Outputs
+  get:
+    description: List all outputs available
+    responses:
+      200:
+        body:
+          example: !include ../examples/outputs/outputs-base-get-200.json
+          type: !include schemas/inputs-outputs-base-schema.json
+  /{outputId}:
+    uriParameters:
+      outputId:
+        type: string
+        pattern: "^[a-zA-Z0-9\\-_]+$"
+    get:
+      description: List of paths available from this API endpoint
+      responses:
+        200:
+          body:
+            example: !include ../examples/outputs/output-base-get-200.json
+            type: !include schemas/output-base-schema.json
+        404:
+          description: Returned when the requested resource does not exist
+    /properties:
+      displayName: Output Properties
+      get:
+        description: Get information about the specified Output, such as a human-readable name and description
+        responses:
+          200:
+            body:
+              example: !include ../examples/outputs/output-properties-get-200.json
+              type: !include schemas/output-properties-schema.json
+          404:
+            description: Returned when the requested resource does not exist
+    /sourceid:
+      displayName: Output Source ID
+      get:
+        description: Get the ID of the Source associated with the specified Output
+        responses:
+          200:
+            body:
+              example: !include ../examples/outputs/output-sourceid-get-200.json
+              type: !include schemas/output-sourceid-response-schema.json
+          404:
+            description: Returned when the requested resource does not exist
+    /channels:
+      displayName: Output Channels
+      get:
+        description: Get information about the specified Output's channels, such as human-readable labels
+        responses:
+          200:
+            body:
+              example: !include ../examples/outputs/output-channels-get-200.json
+              type: !include schemas/output-channels-response-schema.json
+          404:
+            description: Returned when the requested resource does not exist
+    /caps:
+      displayName: Output Capabilities
+      get:
+        description: Get information about the specified Output's capabilities, such as routing constraints
+        responses:
+          200:
+            body:
+              example: !include ../examples/outputs/output-caps-get-200.json
+              type: !include schemas/output-caps-response-schema.json
+          404:
+            description: Returned when the requested resource does not exist
 /map:
   displayName: Map
   get:
@@ -139,137 +263,12 @@ documentation:
               type: !include schemas/map-active-output-response-schema.json
           404:
             description: Returned when the requested resource does not exist
-/inputs:
-  displayName: Inputs
+/io:
+  displayName: Inputs/Outputs View
   get:
-    description: List all inputs available
+    description: Get a view on all Inputs and Outputs
     responses:
       200:
         body:
-          example: !include ../examples/inputs/inputs-base-get-200.json
-          type: !include schemas/inputs-outputs-base-schema.json
-  /{inputId}:
-    uriParameters:
-      inputId:
-        type: string
-        pattern: "^[a-zA-Z0-9\\-_]+$"
-    get:
-      description: List of paths available from this API endpoint
-      responses:
-        200:
-          body:
-            example: !include ../examples/inputs/input-base-get-200.json
-            type: !include schemas/input-base-schema.json
-        404:
-          description: Returned when the requested resource does not exist
-    /caps:
-      displayName: Input Capabilities
-      get:
-        description: Get information about the specified Input's capabilities, such as routing constraints
-        responses:
-          200:
-            body:
-              example: !include ../examples/inputs/input-caps-get-200.json
-              type: !include schemas/input-caps-response-schema.json
-          404:
-            description: Returned when the requested resource does not exist
-    /parent:
-      displayName: Input Parent
-      get:
-        description: Get information about the origin of the audio associated with the specified Input
-        responses:
-          200:
-            body:
-              example: !include ../examples/inputs/input-parent-get-200.json
-              type: !include schemas/input-parent-response-schema.json
-          404:
-            description: Returned when the requested resource does not exist
-    /channels:
-      displayName: Input Channels
-      get:
-        description: Get information about the specified Input's channels, such as human-readable labels
-        responses:
-          200:
-            body:
-              example: !include ../examples/inputs/input-channels-get-200.json
-              type: !include schemas/input-channels-response-schema.json
-          404:
-            description: Returned when the requested resource does not exist
-    /properties:
-      displayName: Input Properties
-      get:
-        description: Get information about the specified Input, such as a human-readable name and description
-        responses:
-          200:
-            body:
-              example: !include ../examples/inputs/input-properties-get-200.json
-              type: !include schemas/input-properties-schema.json
-          404:
-            description: Returned when the requested resource does not exist
-/outputs:
-  displayName: Outputs
-  get:
-    description: List all outputs available
-    responses:
-      200:
-        body:
-          example: !include ../examples/outputs/outputs-base-get-200.json
-          type: !include schemas/inputs-outputs-base-schema.json
-  /{outputId}:
-    uriParameters:
-      outputId:
-        type: string
-        pattern: "^[a-zA-Z0-9\\-_]+$"
-    get:
-      description: List of paths available from this API endpoint
-      responses:
-        200:
-          body:
-            example: !include ../examples/outputs/output-base-get-200.json
-            type: !include schemas/output-base-schema.json
-        404:
-          description: Returned when the requested resource does not exist
-    /sourceid:
-      displayName: Output Source ID
-      get:
-        description: Get the ID of the Source associated with the specified Output
-        responses:
-          200:
-            body:
-              example: !include ../examples/outputs/output-sourceid-get-200.json
-              type: !include schemas/output-sourceid-response-schema.json
-          404:
-            description: Returned when the requested resource does not exist
-    /channels:
-      displayName: Output Channels
-      get:
-        description: Get information about the specified Output's channels, such as human-readable labels
-        responses:
-          200:
-            body:
-              example: !include ../examples/outputs/output-channels-get-200.json
-              type: !include schemas/output-channels-response-schema.json
-          404:
-            description: Returned when the requested resource does not exist
-    /caps:
-      displayName: Output Capabilities
-      get:
-        description: Get information about the specified Output's capabilities, such as routing constraints
-        responses:
-          200:
-            body:
-              example: !include ../examples/outputs/output-caps-get-200.json
-              type: !include schemas/output-caps-response-schema.json
-          404:
-            description: Returned when the requested resource does not exist
-    /properties:
-      displayName: Output Properties
-      get:
-        description: Get information about the specified Output, such as a human-readable name and description
-        responses:
-          200:
-            body:
-              example: !include ../examples/outputs/output-properties-get-200.json
-              type: !include schemas/output-properties-schema.json
-          404:
-            description: Returned when the requested resource does not exist
+          example: !include ../examples/io-get-200.json
+          type: !include schemas/io-response-schema.json
