@@ -3,16 +3,21 @@
   "title": "Activations endpoint",
   "description": "List of all currently pending activations",
   "type": "object",
+  "additionalPropertes": false,
   "patternProperties": {
-    "^[0-9]+$": {
+    "^[a-zA-Z0-9\\-_]+$": {
       "type": "object",
       "additionalPropertes": false,
+      "required": [
+        "activation",
+        "action"
+      ],
       "properties": {
         "activation":{
           "$ref": "activation-response-schema.json"
         },
         "action:":{
-          "$ref": "map-tableentry-schema.json"
+          "$ref": "map-entries-schema.json"
         }
       }
     }

@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "description": "Describes an input's capabilities",
-  "title": "Input parameter capability resource",
+  "title": "Input capabilities resource",
   "additionalProperties": false,
   "required":[
     "reordering",
@@ -14,7 +14,7 @@
     },
     "block_size":{
       "type": "integer",
-      "min": 1
+      "minimum": 1
     }
   }
 }
