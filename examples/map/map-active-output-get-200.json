@@ -1,5 +1,6 @@
 {
-  "outB":{
+  "map":{
+    "outB":{
       "0":{
         "input": "input4",
         "channel_index": 0
@@ -9,4 +10,5 @@
         "channel_index": 1
       }
     }
+  }
 }
