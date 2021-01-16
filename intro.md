@@ -1,7 +1,7 @@
 ### What does it do?
 
 - Allows channel-level operations within NMOS environments
- - For example: muting channels, swapping languages…
+  - For example: muting channels, swapping languages…
 
 ### Why does it matter?
 
