@@ -3,25 +3,26 @@
 [![Lint Status](https://github.com/AMWA-TV/nmos-audio-channel-mapping/workflows/Lint/badge.svg)](https://github.com/AMWA-TV/nmos-audio-channel-mapping/actions?query=workflow%3ALint)
 [![Render Status](https://github.com/AMWA-TV/nmos-audio-channel-mapping/workflows/Render/badge.svg)](https://github.com/AMWA-TV/nmos-audio-channel-mapping/actions?query=workflow%3ARender)
 
-This repository provides an AMWA NMOS Specification to set channel mapping/selecting/shuffling settings for use with NMOS APIs.
+[//]: # "INTRO-START"
+
+### What does it do?
+
+- Allows channel-level operations within NMOS environments
+  - For example: muting channels, swapping languages…
+
+### Why does it matter?
+
+- Provides expected functionality for typical production/broadcast operations
+- Extends usefulness of IS-05 and other NMOS specs.
+
+### How does it work?
+
+- Controller gets channel information from sending Node
+  - …and sends mapping information to the receiving Node
+- Can also do sender-side mapping
+
+[//]: # "INTRO-END"
 
 ## Getting started
 
-Readers are advised to be familiar with:
-*   The [JT-NM Reference Architecture](http://jt-nm.org/RA-1.0/)
-*   The [overview of Networked Media Open Specifications](https://github.com/AMWA-TV/nmos)
-*   The [NMOS Discovery and Registration Specification](https://github.com/AMWA-TV/nmos-discovery-registration) (IS-04)
-*   The [NMOS Connection Management Specification](https://github.com/AMWA-TV/nmos-device-connection-management) (IS-05)
-
-Readers should then read the [documentation](docs/), [APIs](APIs/) (RAML and JSON Schema), and [examples](examples/) (JSON) 
-
-> HTML rendered versions of all NMOS Specifications are available on the [NMOS GitHub pages](https://amwa-tv.github.io/nmos)
-
-## Contents
-
-*   README.md -- This file
-*   [docs/](docs/) -- Normative documentation targeting those implementing APIs and clients.
-*   [APIs/](APIs/) -- Normative API descriptions
-*   [examples/](examples/) -- Example JSON requests and responses for APIs
-*   [LICENSE](LICENSE) -- Licenses for software and text documents
-*   [NOTICE](NOTICE) -- Disclaimer
+There is more information about the NMOS Specifications and their GitHub repos at <https://specs.amwa.tv/nmos>.
