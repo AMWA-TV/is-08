@@ -3,7 +3,7 @@
 [![Lint Status](https://github.com/AMWA-TV/nmos-audio-channel-mapping/workflows/Lint/badge.svg)](https://github.com/AMWA-TV/nmos-audio-channel-mapping/actions?query=workflow%3ALint)
 [![Render Status](https://github.com/AMWA-TV/nmos-audio-channel-mapping/workflows/Render/badge.svg)](https://github.com/AMWA-TV/nmos-audio-channel-mapping/actions?query=workflow%3ARender)
 
-[//]: # "INTRO-START"
+<!-- INTRO-START -->
 
 ### What does it do?
 
@@ -21,7 +21,7 @@
   - …and sends mapping information to the receiving Node
 - Can also do sender-side mapping
 
-[//]: # "INTRO-END"
+<!-- INTRO-END -->
 
 ## Getting started
 
