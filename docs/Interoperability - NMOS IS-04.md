@@ -40,13 +40,13 @@ The Channel Mapping API should be advertised as a 'control' endpoint when publis
 ...
 ```
 
-The path segment 'slot2B' is the `<api selector>` identifier, defined in [API Paths](2.0.%20APIs.md#api-paths).
+The path segment 'slot2B' is the `<api selector>` identifier, defined in [API Paths](APIs.md#api-paths).
 This permits the use of a UUID, such as an associated IS-04 Device `id`, in the usual format or succinct local identifiers such as `slot2B`.
 Human-readable information can be provided, for example, via the IS-04 Device `label` and `description`.
 
 Note as above that the API version is included in the 'type', and in the 'href'. As new versions of the Channel Mapping API are published, further control endpoints may be advertised for Devices which support multiple versions simultaneously.
 
-More details about multi-version support can be found in [Upgrade Path](5.0.%20Upgrade%20Path.md).
+More details about multi-version support can be found in [Upgrade Path](Upgrade%20Path.md).
 
 A given instance of the Channel Mapping API MAY offer control of multiple Devices in a Node from a single URI. Alternatively there MAY be multiple instances of the API on one Node, for example, each corresponding to one Device. In either case, the 'control' endpoint for each Device's Channel Mapping API instance MUST be advertised, even if the URI is the same.
 
@@ -56,7 +56,7 @@ This flexibility is to accommodate different relationships between Devices and N
 
 The Source and Receiver UUIDs used in the API to identify relationships to Inputs and Outputs MUST match those used in a corresponding IS-04 implementation.
 
-Where this Device creates a new Source at an Output (see [Behaviour](4.0.%20Behaviour.md)), the Device MUST advertise these in the IS-04 Node API, and in the IS-04 registry if available.
+Where this Device creates a new Source at an Output (see [Behaviour](Behaviour.md)), the Device MUST advertise these in the IS-04 Node API, and in the IS-04 registry if available.
 
 ## Version Increments
 

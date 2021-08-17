@@ -1,6 +1,6 @@
 # Changelog
 
-This document provides an overview of changes between released versions of this specification. It is particularly important to consider this when implementing APIs which may support multiple releases simultaneously to ease upgrades in large facilities (see [Upgrade Path](docs/5.0.%20Upgrade%20Path.md)).
+This document provides an overview of changes between released versions of this specification. It is particularly important to consider this when implementing APIs which may support multiple releases simultaneously to ease upgrades in large facilities (see [Upgrade Path](docs/Upgrade%20Path.md)).
 
 ## Release v1.0.1 (documentation clarifications and bug fixes only)
 
