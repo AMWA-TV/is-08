@@ -46,7 +46,7 @@ Note that:
 - Channels 5 and 6 of Output B are unrouted.
 
 
-The above Map is represented in JSON in the API as below. See [Behaviour](4.0.%20Behaviour.md) for more details.
+The above Map is represented in JSON in the API as below. See [Behaviour](Behaviour.md) for more details.
 
 ```json
 "map": {
