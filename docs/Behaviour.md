@@ -228,6 +228,8 @@ See the [Timestamps](#Timestamps) section for more details on the required inter
 
 Once an activation has been completed the resulting changes to the map MUST be reflected in the `active` endpoint. The `activation` object in the `active` endpoint MUST contain the details of the last activation to have taken place.
 
+Changes to the underlying Device's channel mapping behaviour (whether initiated by IS-08 or not) are reflected immediately into the Active Map `map`. Therefore the action of the most recent `activation` (or any previous activation) can have been overwritten. The only certain way to determine if the current behaviour is what the Client requires is to examine the `map`.
+
 #### Activation Responses
 
 Each successful activation request is allocated a unique identifier by the API. This identifier MUST be unique within an API instance and for all time.
