@@ -8,7 +8,7 @@ _(c) AMWA 2018, CC Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0)_
 
 ## Start-Up Behaviour
 
-This specification does not define the channel mapping behaviour at start-up, as this may depend on the nature of the Device the API is controlling. However, it is important that the channel mapping behaviour of the underlying Device is reflected in the API at start-up.
+This specification does not define the channel mapping behaviour at start-up, as this may depend on the nature of the Device the API is controlling. It is important that the API always reflects the current channel mapping behaviour of the underlying Device.
 
 ## Interaction with Other Protocols
 
