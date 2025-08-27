@@ -8,7 +8,7 @@ _(c) AMWA 2018, CC Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0)_
 
 ## Start-Up Behaviour
 
-This specification does not define the channel mapping behaviour at start-up, as this may depend on the nature of the Device the API is controlling. However, it is important that the channel mapping behaviour of the underlying Device is reflected in the API at start-up.
+This specification does not define the channel mapping behaviour at start-up, as this may depend on the nature of the Device the API is controlling. It is important that the API always reflect the current channel mapping behaviour of the underlying Device.
 
 ## Interaction with Other Protocols
 
@@ -227,6 +227,8 @@ The Device MUST undertake to apply the parameter changes to the underlying audio
 See the [Timestamps](#Timestamps) section for more details on the required interpretation of the timestamps for scheduled activations.
 
 Once an activation has been completed the resulting changes to the map MUST be reflected in the `active` endpoint. The `activation` object in the `active` endpoint MUST contain the details of the last activation to have taken place.
+
+Changes to the underlying Device's channel mapping behaviour (whether initiated by IS-08 or not) are reflected immediately into the Active Map `map`. Therefore the action of the most recent `activation` (or any previous activation) could have been overwritten. The only certain way to determine if the current behaviour is what the Client requires is to examine the `map`.
 
 #### Activation Responses
 
