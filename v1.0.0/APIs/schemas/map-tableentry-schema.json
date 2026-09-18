@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "description": "Describes one map table entry",
+  "title": "Map table entry",
+  "patternProperties": {
+    "^[a-zA-Z0-9\\-_]+$": {
+      "description": "Names of the output",
+      "patternProperties":{
+        "^(0|([1-9][0-9]*))$":{
+          "description": "Index of channels",
+          "required":[
+            "input",
+            "channel_index"
+          ],
+          "properties": {
+            "input":{
+              "description": "Name of the input the channel to be connected belongs to. null for disconnected.",
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "channel_index":{
+              "description": "Index of channel to be connected.",
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,3011 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://specs.amwa.tv/new/is-08/v1.0.0/4.0.%20Behaviour/">
+      
+      
+        <link rel="prev" href="../3.1.%20Interoperability%20-%20NMOS%20IS-04/">
+      
+      
+        <link rel="next" href="../5.0.%20Upgrade%20Path/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.0.62">
+    
+    
+      
+        <title>Behaviour - AMWA IS-08 NMOS Audio Channel Mapping Specification</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../assets/stylesheets/modern/main.ce62732f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,500,500i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../stylesheets/amwa-branding.css">
+    
+    <script>__md_scope=new URL("..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-label="Navigation"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#behaviour" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="./.." title="AMWA IS-08 NMOS Audio Channel Mapping Specification" class="md-header__button md-logo" aria-label="AMWA IS-08 NMOS Audio Channel Mapping Specification" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer" aria-label="Navigation">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AMWA IS-08 NMOS Audio Channel Mapping Specification
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Behaviour
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search" aria-label="Search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
+  <button type="button" class="md-search__button">
+    Search
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+        <a href="https://github.com/AMWA-TV/is-08" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AMWA-TV/is-08
+  </div>
+</a>
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="./.." title="AMWA IS-08 NMOS Audio Channel Mapping Specification" class="md-nav__button md-logo" aria-label="AMWA IS-08 NMOS Audio Channel Mapping Specification" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    AMWA IS-08 NMOS Audio Channel Mapping Specification
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/AMWA-TV/is-08" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AMWA-TV/is-08
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="./.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  AMWA IS-08 NMOS Audio Channel Mapping Specification
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.0.%20Overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  AMWA NMOS Device Audio Channel Mapping Specification: Overview
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  APIs
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  APIs
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../APIs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  APIs
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../APIs/ChannelMappingAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  ChannelMappingAPI
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.1.%20APIs%20-%20Client%20Side%20Implementation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  APIs: Client Side Implementation Notes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.2.%20APIs%20-%20Server%20Side%20Implementation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  APIs: Server Side Implementation Notes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.0.%20Interoperability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Interoperability
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.1.%20Interoperability%20-%20NMOS%20IS-04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Interoperability: NMOS IS-04
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Behaviour
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Behaviour
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#start-up-behaviour" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Start-Up Behaviour
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interaction-with-other-protocols" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Interaction with Other Protocols
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inputs-and-outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Inputs and Outputs
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inputs and Outputs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#identifiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Identifiers
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Properties
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-and-source-relationship" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Output and Source Relationship
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#receiver-source-and-input-relationship" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Receiver / Source and Input Relationship
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#channels" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Channels
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Input Constraints
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Input Constraints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#re-ordering" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Re-ordering
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#channel-block-sizes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Channel Block Sizes
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combining-input-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Combining Input Constraints
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-routing-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Output Routing Constraints
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#map" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Map
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Map">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-map-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The Map Structure
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activation-requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Activation Requests
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Activation Requests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#activation-responses" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Activation Responses
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#canceling-activations" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Canceling Activations
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timestamps" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Timestamps
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#re-entrant-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Re-entrant Matrices
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io-resource" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        IO Resource
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.0.%20Upgrade%20Path/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Upgrade Path
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Examples
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Examples
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Examples
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/base-get-200/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  base-get-200.json
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/io-get-200/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  io-get-200.json
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_10_4" id="__nav_10_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Inputs
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Inputs
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/inputs/input-name-caps-200/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  input-name-caps-200.json
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/inputs/input-name-channels-get-200/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  input-name-channels-get-200.json
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/inputs/input-name-parent-get-200/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  input-name-parent-get-200.json
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/inputs/input-name-properties-get-200/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  input-name-properties-get-200.json
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/inputs/input-name-root-get-200/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  input-name-root-get-200.json
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/inputs/inputs-root-get-200/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  inputs-root-get-200.json
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_10_5" id="__nav_10_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Map
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Map
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/map/map-activation-activationid-delete-400/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  map-activation-activationid-delete-400.json
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/map/map-activation-activationid-get-200/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  map-activation-activationid-get-200.json
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/map/map-activations-get-200/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  map-activations-get-200.json
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/map/map-activations-post-200/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  map-activations-post-200.json
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/map/map-activations-post-400/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  map-activations-post-400.json
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/map/map-activations-post-423/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  map-activations-post-423.json
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/map/map-activations-post/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  map-activations-post.json
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/map/map-activewithid-get-200/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  map-activewithid-get-200.json
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/map/map-root-get-200/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  map-root-get-200.json
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/map/map-tables-get-200/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  map-tables-get-200.json
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/map/map-tables-patch-423/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  map-tables-patch-423.json
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_10_6" id="__nav_10_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Outputs
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Outputs
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/outputs/output-name-caps-get-200/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  output-name-caps-get-200.json
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/outputs/output-name-channels-get-200/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  output-name-channels-get-200.json
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/outputs/output-name-properties-get-200/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  output-name-properties-get-200.json
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/outputs/output-name-root-get-200/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  output-name-root-get-200.json
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/outputs/output-name-sourceid-get-200/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  output-name-sourceid-get-200.json
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/outputs/output-root-get-200/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  output-root-get-200.json
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Schemas
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Schemas
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schemas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  JSON Schemas
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schemas/activation-response-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  activation-response-schema
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schemas/activation-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  activation-schema
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schemas/base-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  base-schema
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schemas/error/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  error
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schemas/input-base-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  input-base-schema
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schemas/input-caps-response-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  input-caps-response-schema
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schemas/input-channels-response-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  input-channels-response-schema
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schemas/input-output-root-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  input-output-root-schema
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schemas/input-parent-response-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  input-parent-response-schema
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schemas/input-properties-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  input-properties-schema
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schemas/io-response-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  io-response-schema
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schemas/map-activations-activationid-get-response-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  map-activations-activationid-get-response-schema
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schemas/map-activations-get-response-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  map-activations-get-response-schema
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schemas/map-activations-post-response-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  map-activations-post-response-schema
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schemas/map-activations-request-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  map-activations-request-schema
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schemas/map-activewithid-response-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  map-activewithid-response-schema
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schemas/map-base-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  map-base-schema
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schemas/map-tableentry-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  map-tableentry-schema
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schemas/map-tables-response-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  map-tables-response-schema
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schemas/output-base-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  output-base-schema
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schemas/output-caps-response-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  output-caps-response-schema
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schemas/output-channels-response-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  output-channels-response-schema
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schemas/output-properties-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  output-properties-schema
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schemas/output-sourceID-response-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  output-sourceID-response-schema
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#start-up-behaviour" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Start-Up Behaviour
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interaction-with-other-protocols" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Interaction with Other Protocols
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inputs-and-outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Inputs and Outputs
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inputs and Outputs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#identifiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Identifiers
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Properties
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-and-source-relationship" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Output and Source Relationship
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#receiver-source-and-input-relationship" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Receiver / Source and Input Relationship
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#channels" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Channels
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Input Constraints
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Input Constraints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#re-ordering" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Re-ordering
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#channel-block-sizes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Channel Block Sizes
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combining-input-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Combining Input Constraints
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-routing-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Output Routing Constraints
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#map" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Map
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Map">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-map-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The Map Structure
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activation-requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Activation Requests
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Activation Requests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#activation-responses" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Activation Responses
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#canceling-activations" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Canceling Activations
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timestamps" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Timestamps
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#re-entrant-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Re-entrant Matrices
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io-resource" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        IO Resource
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+  
+
+
+<h1 id="behaviour">Behaviour</h1>
+<p><em>(c) AMWA 2018, CC Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</em></p>
+<h2 id="start-up-behaviour">Start-Up Behaviour</h2>
+<p>This specification does not define the channel mapping behaviour at start-up, as this may depend on the nature of the Device the API is controlling. However - it is important that the channel mapping behaviour of the underlying Device is reflected in the API at start-up.</p>
+<h2 id="interaction-with-other-protocols">Interaction with Other Protocols</h2>
+<p>If the audio channel mapping behaviour of the Device is changed via another protocol or control interface the Device MUST update the information in the audio channel mapping API to accurately reflect the current behaviour of the Device.</p>
+<h2 id="inputs-and-outputs">Inputs and Outputs</h2>
+<h3 id="identifiers">Identifiers</h3>
+<p>Inputs and Outputs are represented by a unique identifier. This identifier MUST conform to the following regex pattern:</p>
+<div class="highlight"><pre><span></span><code>^[a-zA-Z0-9\-_]+$
+</code></pre></div>
+<p>All Input and Output identifiers MUST be immutable. Two Inputs MUST NOT share an identifier. Two Outputs MUST NOT share an identifier.</p>
+<h3 id="properties">Properties</h3>
+<p>Inputs and Outputs MUST also provide a human-readable name and description in the <code>props</code> resource, intended to be exposed in control systems.</p>
+<p>These are distinct from the machine readable unique identifier.</p>
+<h3 id="output-and-source-relationship">Output and Source Relationship</h3>
+<p>The <code>sourceid</code> resource of an Output SHOULD be populated with a Source ID when audio is mapped to an Output, if:</p>
+<ul>
+<li>
+<p>It is or may be passed directly to an NMOS Sender within the same Device.</p>
+</li>
+<li>
+<p>It is or may be passed to another process within the Device which is capable of performing a transformation on the Source that would constitute a new Source and or Flow.</p>
+</li>
+<li>
+<p>It is or may be passed to another process within the Device that would not constitute the creation of a new Source or Flow, but would or may then route its resultant output to an NMOS Sender.</p>
+</li>
+<li>
+<p>It is routed back to the Input of the Audio Channel Mapping API, as part of a re-entrant matrix (see <a href="###re-entrant-matrices">Re-Entrant Matrices</a>).</p>
+</li>
+</ul>
+<p>Otherwise, the <code>sourceid</code> shall be set to <code>null</code>.</p>
+<p>In the case where no audio is currently mapped onto an Output (i.e all its entries in the active map are <code>null</code>) then the Output still constitutes a Source, and as such the <code>sourceid</code> resource for the Output SHOULD still present a Source ID where it would otherwise be required to do so.</p>
+<h3 id="receiver-source-and-input-relationship">Receiver / Source and Input Relationship</h3>
+<p>Where the audio associated with an Audio Channel Mapping API Input comes directly from an NMOS Receiver, the UUID of the originating Source SHOULD be populated in <code>id</code> field of the <code>parent</code> resource, and the <code>type</code> field set to <code>source</code>. This information may be made available using in-stream identifiers or using some out-of-band method.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bdec047b-d161-492a-9496-96da704de2b1"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"source"</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>If information about the Source ID is not available, then the UUID of the Receiver SHOULD appear in the <code>id</code> field of the <code>parent</code> resource of the associated Input (e.g inputs/input1/parent). When the <code>parent</code> resource is populated with a Receiver ID, the <code>type</code> field SHALL be populated with the string <code>receiver</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a7250200-30ae-4866-9aeb-721f3f63f58d"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"receiver"</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>It is possible that received audio may have undergone one or more Source creating transformations between Receiver and the Audio Channel Mapping API. In this case, the <code>id</code> field of the <code>parent</code> resource SHOULD contain the id of the upstream Source. The <code>type</code> field should contain the string <code>source</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bdec047b-d161-492a-9496-96da704de2b1"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"source"</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>If the audio did not originate with an NMOS Receiver and has not yet been represented as an NMOS Source, both fields in the <code>parent</code> resource SHOULD be set to <code>null</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w"> </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w"> </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>In the case where an Input is not currently receiving any audio, but would pass any audio received in the future onto its Output, then the <code>parent</code> resource SHOULD be populated with the Receiver or Source ID it is associated with as it would if receiving audio. For example, if an NMOS Receiver is not currently receiving a stream, but would pass any audio it received in the future onto an Audio Channel Mapping API Input, then that input's <code>parent</code> field should be populated as if it were currently receiving audio from that Receiver.</p>
+<h3 id="channels">Channels</h3>
+<p>Inputs and Outputs MUST have at least one channel listed in their <code>channels</code> resource. For some Devices the number of channels will be fixed - for example where an Input or Output represents a base-band connection to a Device such as analogue audio or AES3.</p>
+<p>Other Devices may be capable of dynamically creating or destroying channels, for example where the Input or Output represents an audio stream. The Audio Channel Mapping API does not provide a mechanism for changing the number of channels in an Input or Output resource - this must be done through an out-of-band operation by the user or automatically by the Device.</p>
+<p>A change to the number of channels in an Input or Output MUST be represented in the Input's or Output's own <code>channels</code> resource, but also MUST be represented in the global <code>map/active</code> and <code>map/activations</code> resources - and in the global <code>io</code> resource.</p>
+<p>Newly created Output channels SHOULD start un-routed with the <code>input</code> and <code>channel_index</code> properties for the channel in the map table being set to <code>null</code>. The decision as to which channels are deleted when the number of channels are removed is left as a decision to implementers, as it is likely to depend on the application of the Device.</p>
+<p>Where a channel is added to or removed from an Output this represents the creation of a new Source.</p>
+<h3 id="input-constraints">Input Constraints</h3>
+<p>Inputs may optionally constrain the way the channels contained in the Input may be routed, using the parameters exposed in the <code>caps</code> resource.</p>
+<p>If a client attempts to create a mapping that would violate these constraints the API SHOULD return an HTTP 400 response. This response SHOULD contain a message informing the client that the request was rejected because it did not respect an input constraint and also provide information about which constraint was broken, and for which channels and Inputs, in order to aid debugging.</p>
+<h4 id="re-ordering">Re-ordering</h4>
+<p>In some cases Inputs may not be capable of performing a re-ordering operation with their channels. In this case the Audio Channel Mapping API may be thought of as being used more as a way of routing multiple channels of audio within a Device, rather than re-ordering them. This is illustrated in the diagram below, where channels from a 64 channel MADI input may be mapped into a pair of 8 channel MADI cards:</p>
+<p><img alt="reordering constraint example" src="../images/input-constraints-no-reordering.png" title="Permissible Routing Without Re-ordering" /></p>
+<p>Where an Input is constrained in this way the <code>reordering</code> parameter in the Input's <code>caps</code> resource SHALL be set to <code>false</code>. This indicates that, where more than one channel from the Input is mapped to an Output the resultant mapping must preserve the ordering and separation of the channels such that:</p>
+<ul>
+<li>The difference between Input and Output channel indexes MUST be numerically equal for all channels in the mapping between a particular Input and Output.</li>
+<li>Channels with a lower Input channel index MUST be mapped to a lower Output channel index than channels from the same Input which have a higher Input index that are mapped to the same Output.</li>
+</ul>
+<p>For example a mapping like that shown in the diagram above would be permissible if <code>reordering</code> were set to <code>true</code>, but those below would not:</p>
+<p><img alt="reordering constraint example" src="../images/input-constraints-gaps.png" title="Differing offsets are not permitted." /></p>
+<p><img alt="reordering constraint example" src="../images/input-constraints-switching.png" title="All channels must be consecutive." /></p>
+<p>However - the following examples ARE permissible, as the difference in offsets occurs across two different Outputs:</p>
+<p><img alt="reordering constraint example" src="../images/input-constraints-input-gap.png" title="This constraint does not apply across different Outputs." /></p>
+<p><img alt="reordering constraint example" src="../images/input-constraints-crossover.png" title="Crossing Over is not permitted." /></p>
+<h4 id="channel-block-sizes">Channel Block Sizes</h4>
+<p>Some Devices place a further constraint that channels must be treated as a discrete block from a given Input, where all channels in the block are expected to be routed together from a certain starting point, such that:</p>
+<ul>
+<li>It MUST be be that all Input channels in a block are routed to an Output, or none at all.</li>
+<li>All Input channels in a block MUST be routed to the same Output when routed.</li>
+<li>An Input channel MUST only be in one block.</li>
+<li>All Input channels MUST be in a block.</li>
+<li>All blocks MUST be the same size.</li>
+<li>All blocks MUST start with an input channel index being a multiple of the <code>block_size</code> parameter or 0.</li>
+</ul>
+<p>Where an Input is constrained in this way the <code>block_size</code> parameter in the Input's <code>caps</code> resource SHALL be an integer indicating the block size that is in use for that Input and the resulting Input Channel start. Otherwise the <code>block_size</code> parameter SHALL be set to <code>1</code>.</p>
+<p>The following example describes a case, where the specific architecture of a given MADI Card allows only to either process Inputs 1-8, 9-16, 17-24, and so on from a given MADI Signal. The following output would be permissible, where a <code>block_size</code> value of <code>8</code> is used:
+-&gt;&gt; These blocks are inconsistent with the requirement that each block must start with an index equal to a multiple of the block size. How to rectify?</p>
+<p><img alt="reordering constraint example" src="../images/input-constraints-no-reordering.png" title="Permissible routing with blocks of 8" /></p>
+<p>-&gt;&gt; add a picture of Signals 1-8 routed to MADI Card B, or Signals 9-16 routed to MADI Card A.</p>
+<p>The following examples would not be permissible:</p>
+<p><img alt="reordering constraint example" src="../images/input-constraints-input-gap.png" title="All of a block must be routed." /></p>
+<p><img alt="reordering constraint example" src="../images/input-constraints-block-reordering.png" title="Crossing Over within blocks is permitted." /></p>
+<h4 id="combining-input-constraints">Combining Input Constraints</h4>
+<p>The <code>block_size</code> and <code>reordering</code> parameters may both be used at the same time, to express a constraint where channels must be treated as blocks, and re-ordering in those blocks is not permitted. For example, the following would no longer be permitted when using a <code>block_size</code> of <code>8</code> when the <code>reordering</code> parameter is set to <code>false</code>:</p>
+<p><img alt="reordering constraint example" src="../images/input-constraints-switching.png" title="Re-ordering is allowed in blocks." /></p>
+<h3 id="output-routing-constraints">Output Routing Constraints</h3>
+<p>It is recognised that not all Devices allow the routing of channels in any Input to any Output. In order to reflect this limitation, the Output <code>caps</code> resource presents a list of rout-able Inputs in the <code>routable_inputs</code> field. If such restrictions exist then they MUST be populated by the Device, such that if an Input is listed in an Output's rout-able input list then channels from that input can be routed to that Output in the Map table. If no such restrictions exist, the <code>routable_inputs</code> field MUST be set to <code>null</code>.</p>
+<p>Clients SHOULD NOT attempt to route channels from Inputs to an Output unless that Input is listed in the Output's <code>routable_inputs</code> array. If a client attempts to make such a route the API SHOULD respond with an HTTP 400 response. This error message SHOULD inform the client that it attempted to make an illegal route, and which inputs/outputs were involved in the illegal route.</p>
+<h2 id="map">Map</h2>
+<h3 id="the-map-structure">The Map Structure</h3>
+<p>The <code>active</code> resource contain a structure called <code>map</code>, which looks like the following:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">"map"</span><span class="p">:{</span>
+<span class="w">  </span><span class="nt">"outA"</span><span class="p">:{</span>
+<span class="w">    </span><span class="nt">"0"</span><span class="w"> </span><span class="p">:{</span>
+<span class="w">      </span><span class="nt">"input"</span><span class="p">:</span><span class="w"> </span><span class="s2">"input1"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"channel_index"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"1"</span><span class="p">:{</span>
+<span class="w">      </span><span class="nt">"input"</span><span class="p">:</span><span class="w"> </span><span class="s2">"input1"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"channel_index"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"outB"</span><span class="p">:{</span>
+<span class="w">    </span><span class="nt">"0"</span><span class="p">:{</span>
+<span class="w">      </span><span class="nt">"input"</span><span class="p">:</span><span class="w"> </span><span class="s2">"input4"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"channel_index"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"1"</span><span class="p">:{</span>
+<span class="w">      </span><span class="nt">"input"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"channel_index"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The keys in the map object are the identifiers of all the Outputs in the API. Every Output has an object within the <code>map</code> object to represent it. Keys within an Output object represent channels in the Output, and are the JSON array index of the channel in the Output's <code>channels</code> resource.</p>
+<p>Each channel contains two fields - <code>input</code> and <code>channel_index</code>. <code>channel_index</code> is the JSON array index of the Input channel routed to that Output channel, as indicated by the Input's <code>channels</code> resource. <code>input</code> is the identifier of the Input to which the routed channel belongs.</p>
+<p>If no Input channel is being routed to an Output channel, both <code>input</code> and <code>channel_index</code> MUST be set to <code>null</code>.
+Where an Output does not have a channel routed to it the Device MUST interpret this as silence, and produce a silent signal of appropriate bit depth and bit rate from that output.</p>
+<h3 id="activation-requests">Activation Requests</h3>
+<p>Activations are the mechanism by which changes are made to the <code>active</code> resource. Activations can either be immediate or scheduled.
+In either case an activation may be made by performing a <code>POST</code> request to the <code>activations</code> endpoint.</p>
+<p>When POSTing to the <code>activations</code> resource clients MUST use a subset of the of the map resource, such that only the entries to be updated are included. The API MUST leave values not expressly updated in the POST request un-changed by the activation.</p>
+<p>The submission of a scheduled activation MUST NOT result in any changes to the Device audio channel mapping behaviour until the activation time is reached.</p>
+<p>In order to trigger an activation a client POSTs <code>activation</code> and <code>map</code> objects in the <code>activations</code> endpoint. The <code>mode</code> property in the <code>activation</code> object MUST be set to one of the following four values:</p>
+<ul>
+<li><code>activate_immediate</code> - The Device MUST undertake to apply the parameter changes to the underlying audio processing as soon as possible.</li>
+<li><code>activate_scheduled_absolute</code> - The Device MUST activate the parameter changes as close as possible to the absolute time indicated by the timestamp in the <code>requested_time</code> field. The timestamp MUST be treated as a TAI timestamp, as detailed in the <a href="###Timestamps">Timestamps</a> sub-section.</li>
+<li><code>activate_scheduled_relative</code> - The Device MUST activate the parameter changes as close as possible to the relative time in seconds indicated by the <code>requested_time</code> field. See the <a href="###Timestamps">Timestamps</a> Section for details on the format of this timestamp.</li>
+</ul>
+<p>Once an activation has been completed the resulting changes to the map SHALL be reflected in the <code>active</code> endpoint. The <code>activation</code> resource in the <code>active</code> endpoint SHALL contain the details of the last activation to have taken place.</p>
+<p>Pending scheduled activations, along with their ID,  are listed <code>activations</code> resource until they activate. Once activated they MUST be removed form the resource. Immediate activations MUST NOT appear in the <code>activations</code> list, as they are carried out upon arrival.</p>
+<h4 id="activation-responses">Activation Responses</h4>
+<p>Each activation is allocated a unique identifier by the API. This identifier is returned as part of the activation response, to allow the client to cancel the activation if required. This identifier MUST be unique within an API instance and for all time.</p>
+<p>Note the presence of the extra <code>activation_time</code> parameter in the response schema. For immediate activation this SHOULD be the time the activation actually occurred as an absolute TAI timestamp.</p>
+<p>An HTTP 200 response SHOULD be returned when an immediate activation has been successfully requested. For a request with an immediate activation the API SHOULD only return a response once the new map has been applied to the audio.</p>
+<p>An HTTP 202 response SHOULD be returned when a request for a scheduled activation is accepted, to indicate that while the request itself was acceptable it has not yet been acted upon by the sender. For scheduled activations <code>activation_time</code> should be the absolute TAI time the parameters will actually transition. For absolute scheduled activations SHOULD be the same as the requested time, but may differ if the Device is unable to schedule at the requested time.</p>
+<p>If an Output is modified by an already scheduled activation the API SHOULD respond with HTTP 423 <code>resource locked</code>. The API SHALL reject the entire request, even if some of the routes in the failed request are not currently locked by another activation.</p>
+<p>Any attempt to set one of the two fields within a Output channel object to <code>null</code> without setting the other SHOULD result in an HTTP 400 response. In this error scenario the API MUST reject the activation request in full, even if some of the routes in the failed request would have been valid.</p>
+<p>In the event that the stage request attempts to perform a routing operation that is not permitted by the Input or Output routing constraints the API SHOULD respond with an HTTP 400 error response. The API SHALL reject the entire request, even if some of the routes in the failed request would have been valid.</p>
+<p>Note that for activations the <code>mode</code> parameter MUST return to null once the activation transaction with the client is completed (i.e the response to the PATCH has been sent by the server).</p>
+<h4 id="canceling-activations">Canceling Activations</h4>
+<p>A client cancels an activation by submitting a DELETE request to the resource <code>/map/acivations/activation-id</code>. If the activation has already been completed the API SHOULD respond with an HTTP 404 error response, as the activation no longer exists.</p>
+<h3 id="timestamps">Timestamps</h3>
+<p>All timestamps in this API SHALL be string formatted timestamps (\&lt;seconds&gt;:\&lt;nanoseconds&gt;) indicating time (absolute or relative) for activation. For relative times, the time '0:0' SHALL be considered to be the time the request is received by the API.</p>
+<p>In order to ensure consistent operation of the API during and around leap seconds the API SHALL use TAI for all absolute timestamps. TAI does not apply leap seconds, and is therefore an integer number of seconds different to UTC. The timestamps used in the API SHALL be based on the UNIX epoch, meaning 1970-01-01 00:00:00 TAI would be represented as '0:0'.</p>
+<p>Devices receiving their time references in UTC MUST maintain an up-to-date knowledge of when leap seconds will be applied in order to correctly calculate TAI time. Leap second information is available for the <a href="https://www.iers.org/IERS/EN/Home/home_node.html">International Earth Rotation and Reference System Service (IERS)</a>.</p>
+<h3 id="re-entrant-matrices">Re-entrant Matrices</h3>
+<p>-&gt;&gt; "Matrix" is only used in this section and references thereto. Use "map" instead for consistency?</p>
+<p>Some Devices have more complex routing requirements. For example, a Device may have a large number of channels on an input, but restrictions in DSP capacity may mean that only a limited sub-set of these channels can be routed at any given time. For example, the Device illustrated below has a 64 channel MADI Input, but a limited number of MADI cards, meaning it can only process 16 of the 64 channels at any one time. Any of the outputs of the MADI cards can then be routed to a two channel AES67 output.</p>
+<p><img alt="re-entrant matrix example" src="../images/madi-example.png" title="Re-entrant matrix example" /></p>
+<p>In this scenario the audio undergoes two distinct routing operations - the first from the MADI input to the MADI card, and then a second from the MADI card to the AES67 output. In order to allow for these kinds of restrictions the Audio Channel Mapping API allows for the concept of a re-entrant matrix. Audio at an Output may be routed back to an Input. This is signaled to the control system by the same Source ID being present in both the Output's <code>sourceid</code> resource and also the Input's <code>parent</code> resource.</p>
+<p>-&gt;&gt; Bits of JSON corresponding to the example matrix?</p>
+<p>Where this is done the Device MUST ensure that the Output constraints prevents audio being routed such that a loop is formed, which is to say audio must not be able to be routed back to the Output from which it originated.</p>
+<h2 id="io-resource">IO Resource</h2>
+<p>The IO resource provides a structure detailing all Inputs, Outputs and available mappings between them.</p>
+<p>The object returned from this resource contains an Input object and an Output object. These objects contain objects representing each of the Inputs and Outputs. These objects contain a list of channels available, and the ReceiverID/SourceID associated with each Input/Output respectively. This information MUST match the information available in the Input's/Output's own resources, including the array order of the <code>channels</code> resources.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      
+        
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":"..","features":[],"redirect":null,"search":"../assets/javascripts/workers/search.7d14d953.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":{"provider":"mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.8dcc8e9c.min.js"></script>
+      
+        <script src="../javascripts/json-viewer.js"></script>
+      
+        <script src="../javascripts/amwa-branding.js"></script>
+      
+    
+  </body>
+</html>

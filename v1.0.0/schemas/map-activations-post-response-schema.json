@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Activations endpoint",
+  "description": "Activation response",
+  "type": "object",
+  "maxProperties": 1,
+  "patternProperties": {
+    "^[0-9]+$": {
+      "type": "object",
+      "additionalPropertes": false,
+      "properties": {
+        "activation":{
+          "$ref": "activation-response-schema.json"
+        },
+        "action:":{
+          "$ref": "map-tableentry-schema.json"
+        }
+      }
+    }
+  }
+}

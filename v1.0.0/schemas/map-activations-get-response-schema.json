@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Activations endpoint",
+  "description": "List of all currently pending activations",
+  "type": "object",
+  "patternProperties": {
+    "^[0-9]+$": {
+      "type": "object",
+      "additionalPropertes": false,
+      "properties": {
+        "activation":{
+          "$ref": "activation-response-schema.json"
+        },
+        "action:":{
+          "$ref": "map-tableentry-schema.json"
+        }
+      }
+    }
+  }
+}
