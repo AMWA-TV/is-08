@@ -1,0 +1,201 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "IO Information view for entire API",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "inputs",
+    "outputs"
+  ],
+  "properties": {
+    "inputs": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-zA-Z0-9\\-_]+$": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "properties": {
+              "$schema": "http://json-schema.org/draft-04/schema#",
+              "type": "object",
+              "description": "Properties of the input",
+              "title": "Input properties resource",
+              "required": [
+                "name",
+                "description"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "Human readable name for the input"
+                },
+                "description": {
+                  "type": "string",
+                  "description": "Human readable description of the input"
+                }
+              }
+            },
+            "parent": {
+              "$schema": "http://json-schema.org/draft-04/schema#",
+              "type": "object",
+              "additionalProperties": false,
+              "description": "Gives details of where media connected to an Input came from",
+              "title": "Input Parent Resource",
+              "required": [
+                "id",
+                "type"
+              ],
+              "properties": {
+                "id": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+                },
+                "type": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "enum": [
+                    "source",
+                    "receiver",
+                    null
+                  ]
+                }
+              }
+            },
+            "channels": {
+              "$schema": "http://json-schema.org/draft-04/schema#",
+              "type": "array",
+              "description": "List of channels in an input",
+              "title": "Input channel resource",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "required": [
+                  "label"
+                ],
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "caps": {
+              "$schema": "http://json-schema.org/draft-04/schema#",
+              "type": "object",
+              "description": "Describes an input's capabilities",
+              "title": "Input capabilities resource",
+              "additionalProperties": false,
+              "required": [
+                "reordering",
+                "block_size"
+              ],
+              "properties": {
+                "reordering": {
+                  "type": "boolean"
+                },
+                "block_size": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "outputs": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-zA-Z0-9\\-_]+$": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "properties": {
+              "$schema": "http://json-schema.org/draft-04/schema#",
+              "type": "object",
+              "description": "Properties of the output",
+              "title": "Output properties resource",
+              "required": [
+                "name",
+                "description"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "Human readable name for the output"
+                },
+                "description": {
+                  "type": "string",
+                  "description": "Human readable description of the output"
+                }
+              }
+            },
+            "source_id": {
+              "$schema": "http://json-schema.org/draft-04/schema#",
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "Gives an output's source ID",
+              "title": "Output source ID resource",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+            },
+            "channels": {
+              "$schema": "http://json-schema.org/draft-04/schema#",
+              "type": "array",
+              "description": "List of channels in an output",
+              "title": "Output channel resource",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "required": [
+                  "label"
+                ],
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "caps": {
+              "$schema": "http://json-schema.org/draft-04/schema#",
+              "type": "object",
+              "description": "Describes an output's capabilities",
+              "title": "Output capabilities resource",
+              "required": [
+                "routable_inputs"
+              ],
+              "properties": {
+                "routable_inputs": {
+                  "description": "List of Inputs that may be routed to this Output, including null if unrouted Output channels are allowed. This property MUST be set to null, if no such restrictions exist.",
+                  "anyOf": [
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "pattern": "^[a-zA-Z0-9\\-_]+$"
+                      },
+                      "uniqueItems": true
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

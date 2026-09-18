@@ -1,0 +1,366 @@
+{
+  "version": 1,
+  "repository": "AMWA-TV/is-08",
+  "documents": [
+    {
+      "title": "ChannelMappingAPI",
+      "url": "https://specs.amwa.tv/new/is-08/latest/APIs/ChannelMappingAPI/",
+      "text": "ChannelMappingAPI ChannelMappingAPI ChannelMappingAPI - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content ChannelMappingAPI The Channel Mapping API is exposed by NMOS Devices as a standard control interface for management of audio matrix mapping inside Devices. Open ChannelMappingAPI API documentation",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "Channel Mapping version v1.0",
+      "url": "https://specs.amwa.tv/new/is-08/latest/APIs/ChannelMappingAPI/",
+      "text": "Channel Mapping version v1.0 Channel Mapping version v1.0 Overview Further Documentation Base HTTP status code 200 Body Inputs HTTP status code 200 Body URI Parameters HTTP status code 200 Body HTTP status code 404 URI Parameters HTTP status code 200 Body HTTP status code 404 URI Parameters HTTP status code 200 Body HTTP status code 404 URI Parameters HTTP status code 200 Body HTTP status code 404 URI Parameters HTTP status code 200 Body HTTP status code 404 Outputs HTTP status code 200 Body URI Parameters HTTP status code 200 Body HTTP status code 404 URI Parameters HTTP status code 200 Body HTTP status code 404 URI Parameters HTTP status code 200 Body HTTP status code 404 URI Parameters HTTP status code 200 Body HTTP status code 404 URI Parameters HTTP status code 200 Body HTTP status code 404 Map HTTP status code 200 Body HTTP status code 200 Body Body HTTP status code 200 Body HTTP status code 202 Body HTTP status code 400 Body HTTP status code 423 Body HTTP status code 200 HTTP status code 403 URI Parameters HTTP status code 200 Body HTTP status code 404 URI Parameters HTTP status code 204 HTTP status code 404 URI Parameters HTTP status code 200 HTTP status code 403 HTTP status code 200 Body URI Parameters HTTP status code 200 Body HTTP status code 404 Inputs/Outputs View HTTP status code 200 Body Channel Mapping Channel Mapping version v1.0 http://api.example.com/x-nmos/channelmapping/{version} version : required (v1.0) Overview The Channel Mapping API is exposed by NMOS Devices as a standard control interface for management of audio matrix mapping inside Devices. Further Documentation Further normative documentation covering the behaviour of this API is contained in the docs folder of this repository. Base / get get List of paths available from this API × get / List of paths available from this API Response HTTP status code 200 Body Media type : application/json Type : { \"$schema\": \"http://json-schema.org/draft-04/schema#\", \"type\": \"array\", \"description\": \"Describes the Channel Mapping API base resource\", \"title\": \"Channel Mapping API base resource\", \"items\": { \"type\": \"string\", \"enum\": [ \"inputs/\", \"outputs/\", \"map/\", \"io/\" ] }, \"minItems\": 4, \"maxItems\": 4, \"uniqueItems\": true } Example : [ \"inputs/\", \"outputs/\", \"map/\", \"io/\" ] Inputs /inputs get get List all inputs available × get /inputs List all inputs available Response HTTP status code 200 Body Media type : application/json Type : { \"$schema\": \"http://json-schema.org/draft-04/schema#\", \"type\": \"array\", \"description\": \"List of paths for the inputs or outputs\", \"title\": \"Inputs or Outputs base resource\", \"items\": { \"type\": \"string\", \"pattern\": \"^[a-zA-Z0-9\\\\-_]+/$\" }, \"uniqueItems\": true } Example : [ \"input1/\", \"input2/\", \"input3/\", \"input4/\" ] /inputs /{inputId} get get List of paths available from this API endpoint × get /inputs /{inputId} List of paths available from this API endpoint Request Response URI Parameters inputId : required (string - pattern: ^[a-zA-Z0-9\\-_]+$) HTTP status code 200 Body Media type : application/json Type : { \"$schema\": \"http://json-schema.org/draft-04/schema#\", \"type\": \"array\", \"description\": \"Describes the Channel Mapping API input base resource\", \"title\": \"Channel Mapping API input base resource\", \"items\": { \"type\": \"string\", \"enum\": [ \"properties/\", \"parent/\", \"channels/\", \"caps/\" ] }, \"minItems\": 4, \"maxItems\": 4, \"uniqueItems\": true } Example : [ \"caps/\", \"parent/\", \"channels/\", \"properties/\" ] HTTP status code 404 Returned when the requested resource does not exist /inputs/{inputId} /properties get get Get information about the specified Input, such as a human-readable name and description × get /inputs/{inputId} /properties Get information about the specified Input, such as a human-readable name and description Request Response URI Parameters inputId : required (string - pattern: ^[a-zA-Z0-9\\-_]+$) HTTP status code 200 Body Media type : application/json Type : { \"$schema\": \"http://json-schema.org/draft-04/schema#\", \"type\": \"object\", \"description\": \"Properties of the input\", \"title\": \"Input properties resource\", \"required\":[ \"name\", \"description\" ], \"properties\": { \"name\":{ \"type\": \"string\", \"description\": \"Human readable name for the input\" }, \"description\":{ \"type\": \"string\", \"description\": \"Human readable description of the input\" } } } Example : { \"name\": \"AES-2\", \"description\": \"AES digital audio input 2\" } HTTP status code 404 Returned when the requested resource does not exist /inputs/{inputId} /parent get get Get information about the origin of the audio associated with the specified Input × get /inputs/{inputId} /parent Get information about the origin of the audio associated with the specified Input Request Response URI Parameters inputId : required (string - pattern: ^[a-zA-Z0-9\\-_]+$) HTTP status code 200 Body Media type : application/json Type : { \"$schema\": \"http://json-schema.org/draft-04/schema#\", \"type\": \"object\", \"additionalProperties\": false, \"description\": \"Gives details of where media connected to an Input came from\", \"title\": \"Input Parent Resource\", \"required\":[ \"id\", \"type\" ], \"properties\": { \"id\":{ \"type\": [ \"string\", \"null\" ], \"pattern\": \"^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$\" }, \"type\":{ \"type\": [ \"string\", \"null\" ], \"enum\":[ \"source\", \"receiver\", null ] } } } Example : { \"id\": \"91762591-9e46-48db-bd08-f8450248f02c\", \"type\": \"source\" } HTTP status code 404 Returned when the requested resource does not exist /inputs/{inputId} /channels get get Get information about the specified Input's channels, such as human-readable labels × get /inputs/{inputId} /channels Get information about the specified Input's channels, such as human-readable labels Request Response URI Parameters inputId : required (string - pattern: ^[a-zA-Z0-9\\-_]+$) HTTP status code 200 Body Media type : application/json Type : { \"$schema\": \"http://json-schema.org/draft-04/schema#\", \"type\": \"array\", \"description\": \"List of channels in an input\", \"title\": \"Input ch",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "APIs",
+      "url": "https://specs.amwa.tv/new/is-08/latest/APIs/",
+      "text": "APIs APIs APIs - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content APIs ChannelMappingAPI",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "APIs: Client Side Implementation Notes",
+      "url": "https://specs.amwa.tv/new/is-08/latest/APIs%20-%20Client%20Side%20Implementation/",
+      "text": "APIs: Client Side Implementation Notes APIs: Client Side Implementation Notes Failure Modes APIs: Client Side Implementation Notes - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content APIs: Client Side Implementation Notes (c) AMWA 2018, CC Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0) Failure Modes If a client receives a HTTP 500 response code from the API, a failure has occurred. The client should display the content of the response's error field to the user if possible, and indicate that the Device may be in a bad state. The client should also refresh the values in the map/active and map/activations endpoints to ensure it is accurately reflecting the current state of the API.",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "APIs: Server Side Implementation Notes",
+      "url": "https://specs.amwa.tv/new/is-08/latest/APIs%20-%20Server%20Side%20Implementation/",
+      "text": "APIs: Server Side Implementation Notes APIs: Server Side Implementation Notes Cross-Origin Resource Sharing (CORS) APIs: Server Side Implementation Notes - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content APIs: Server Side Implementation Notes (c) AMWA 2018, CC Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0) Cross-Origin Resource Sharing (CORS) In order to permit web-based control interfaces to be hosted remotely, all NMOS APIs MUST implement valid CORS HTTP headers in responses to all requests. In addition to this, where highlighted in the API specifications servers MUST respond to HTTP pre-flight OPTIONS requests. Servers MAY additionally support HTTP OPTIONS requests made to any other API resource. In order to simplify development, the following headers may be returned in order to remove these restrictions as far as possible. Note that these are very relaxed and may not be suitable for a production deployment. Access-Control-Allow-Origin: * Access-Control-Allow-Methods: GET, PUT, POST, PATCH, HEAD, OPTIONS, DELETE Access-Control-Allow-Headers: Content-Type, Accept Access-Control-Max-Age: 3600 To ensure compatibility, the response 'Access-Control-Allow-Headers' could be set from the request's 'Access-Control-Request-Headers'.",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "Behaviour",
+      "url": "https://specs.amwa.tv/new/is-08/latest/Behaviour/",
+      "text": "Behaviour Behaviour Start-Up Behaviour Interaction with Other Protocols Inputs and Outputs Identifiers Properties Output and Source Relationship Receiver / Source and Input Relationship Channels Input Constraints Output Routing Constraints Map The Active Map Activation Requests Timestamps Re-entrant Mappings Inputs/Outputs View Behaviour - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content Behaviour (c) AMWA 2018, CC Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0) Start-Up Behaviour This specification does not define the channel mapping behaviour at start-up, as this may depend on the nature of the Device the API is controlling. It is important that the API always reflect the current channel mapping behaviour of the underlying Device. Interaction with Other Protocols If the audio channel mapping behaviour of the Device is changed via another protocol or control interface the Device MUST update the information in the Channel Mapping API to accurately reflect the current behaviour of the Device. Inputs and Outputs The inputs and outputs resources enumerate the Inputs and Outputs respectively. Each Input and Output resource has a number of child resources. Identifiers Inputs and Outputs are represented by a unique identifier. This identifier MUST conform to the following regex pattern: ^[a-zA-Z0-9\\-_]+$ All Input and Output identifiers MUST be immutable. Two Inputs MUST NOT share an identifier. Two Outputs MUST NOT share an identifier. Properties Inputs and Outputs MUST also provide a human-readable name and description in the properties resource, intended to be exposed in control systems. These are distinct from the machine readable unique identifier. Output and Source Relationship The sourceid resource of an Output SHOULD be populated with a Source ID, if: The output audio may be transmitted directly by an NMOS Sender belonging to the Device. The output audio may be transformed by some process to create a new Source and/or Flow. The Output is routed back to an Input of the Channel Mapping API (see Re-entrant Mappings ). Otherwise, the sourceid MAY be set to null . In the case where no audio is currently routed to an Output (i.e all its entries in the active map are null ) then the Output still constitutes a Source, and as such the sourceid resource for the Output SHOULD still present a Source ID where it would otherwise be required to do so. Receiver / Source and Input Relationship Where the audio associated with a Channel Mapping API Input comes directly from an NMOS Receiver, then the parent resource of the Input is populated in one of two ways: The ID of the originating Source SHOULD appear in the id field of the parent resource if this information is available via some in-stream or out-of-band method. However, if information about the Source ID is not available, then the ID of the Receiver SHOULD appear in the id field of the parent resource. Where the received audio has undergone one or more Source-creating transformations between the Receiver and this Input, the id field of the parent resource SHOULD contain the ID of the immediate parent Source. On the other hand, if the Input does not have an associated NMOS Receiver or Source, the id field in the parent resource SHOULD be set to null . When the id contains a Source ID or Receiver ID, the type field MUST be populated with the string source or receiver as appropriate. When the id is null , the type field MUST also be populated with null . For example, the following are all valid: { \"id\" : \"bdec047b-d161-492a-9496-96da704de2b1\" , \"type\" : \"source\" } { \"id\" : \"a7250200-30ae-4866-9aeb-721f3f63f58d\" , \"type\" : \"receiver\" } { \"id\" : null , \"type\" : null } The parent resource MUST be populated as specified even when the Input is not currently receiving audio from the parent Receiver or Source. Channels Inputs and Outputs MUST have at least one channel listed in their channels resource. For some Devices the number of channels will be fixed - for example where an Input or Output represents a base-band connection to a Device such as analogue audio or AES3. Other Devices may be capable of dynamically creating or destroying channels, for example where the Input or Output represents an audio stream. The Channel Mapping API does not provide a mechanism for changing the number of channels in an Input or Output resource - this must be done through an out-of-band operation by the user or automatically by the Device. A change to the number of channels in an Input or Output MUST be represented in the Input's or Output's own channels resource, but also MUST be represented in the global map/active and map/activations resources - and in the global io resource. Newly created Output channels SHOULD start unrouted, with the input and channel_index properties for the channel in the map table being set to null . The decision as to which channels are deleted when the number of channels are removed is left as a decision to implementers, as it is likely to depend on the application of the Device. Where a channel is added to or removed from an Output this represents the creation of a new Source. Input Constraints Inputs may optionally constrain the way the channels contained in the Input may be routed, using the parameters exposed in the caps resource. If a client attempts to create a mapping that would violate these constraints the API SHOULD return an HTTP 400 response. This response SHOULD contain a message informing the client that the request was rejected because it did not respect an input constraint and also provide information about which constraint was broken, and for which channels and Inputs, in order to aid debugging. To illustrate Input constraints the following examples relate to mapping channels from 64-channel MADI ( Multichannel Audio Digital Interface, AES10 ) Input onto a pair of 8-channel MADI Outputs. Re-ordering In some cases Inputs may not be capable of performing a re-ordering operation with their channels. In",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "Interoperability",
+      "url": "https://specs.amwa.tv/new/is-08/latest/Interoperability/",
+      "text": "Interoperability Interoperability Interoperability - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content Interoperability (c) AMWA 2018, CC Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0) The Audio Channel Mapping Specification is intended to be used alongside other NMOS specifications, and may also be used alongside other common non-NMOS specifications. These documents cover common interoperability requirements when operating in such situations.",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "Interoperability: NMOS IS-04",
+      "url": "https://specs.amwa.tv/new/is-08/latest/Interoperability%20-%20NMOS%20IS-04/",
+      "text": "Interoperability: NMOS IS-04 Interoperability: NMOS IS-04 Discovery Receiver and Source IDs Version Increments Interoperability: NMOS IS-04 - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content Interoperability: NMOS IS-04 (c) AMWA 2018, CC Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0) The Audio Channel Mapping Specification shares a data model with the NMOS IS-04 specification, and as a result it is designed to be used alongside it. The following implementation notes identify correct behavior for doing this. When this API is used alongside IS-04 in a deployment, the IS-04 APIs should be operating at version 1.1 or greater in order to ensure full interoperability. Discovery The Channel Mapping API should be advertised as a 'control' endpoint when publishing a compliant NMOS Device. By using the common type 'urn:x-nmos:control:cm-ctrl/v1.0', control interfaces can identify all Devices which implement the Channel Mapping API, and the URLs required to access them. For more details see NMOS Device Control Types . Example 1: The 'controls' attribute of the NMOS Device of a simple Node with a single device and Channel Mapping API instance ... \"controls\" : [ { \"type\" : \"urn:x-nmos:control:cm-ctrl/v1.0\" , \"href\" : \"http://192.168.10.3/x-nmos/channelmapping/v1.0/\" } ] ... Example 2: The 'controls' attribute of an NMOS Device of a Node which advertises a different Channel Mapping API instance for each device ... \"controls\" : [ { \"type\" : \"urn:x-nmos:control:cm-ctrl/v1.0\" , \"href\" : \"http://192.168.10.3/x-nmos/channelmapping/v1.0/slot2B/\" } ] ... The path segment 'slot2B' is the <api selector> identifier, defined in API Paths . This permits the use of a UUID, such as an associated IS-04 Device id , in the usual format or succinct local identifiers such as slot2B . Human-readable information can be provided, for example, via the IS-04 Device label and description . Note as above that the API version is included in the 'type', and in the 'href'. As new versions of the Channel Mapping API are published, further control endpoints may be advertised for Devices which support multiple versions simultaneously. More details about multi-version support can be found in Upgrade Path . A given instance of the Channel Mapping API MAY offer control of multiple Devices in a Node from a single URI. Alternatively there MAY be multiple instances of the API on one Node, for example, each corresponding to one Device. In either case, the 'control' endpoint for each Device's Channel Mapping API instance MUST be advertised, even if the URI is the same. This flexibility is to accommodate different relationships between Devices and Nodes. For example, some Devices may be loosely coupled to the Node, for example cards in a card frame. These Devices are more likely to have an instance of the API for each card. Others may be tightly coupled, for example a media processing pipeline on a server, where it is likely to be preferable to have one instance of the API that is advertised for each pipeline. Receiver and Source IDs The Source and Receiver UUIDs used in the API to identify relationships to Inputs and Outputs MUST match those used in a corresponding IS-04 implementation. Where this Device creates a new Source at an Output (see Behaviour ), the Device MUST advertise these in the IS-04 Node API, and in the IS-04 registry if available. Version Increments In order to prevent unnecessary polling of the Channel Mapping API active map resource, any changes to active map parameters belonging to Source connected Outputs MUST be signaled via the IS-04 versioning mechanism by means of a version timestamp increment on the related \"source\" object. In all cases: Device version number SHOULD increment if the map has been modified. Source version number SHOULD increment if the output that has been modified is a parent of a registered Source.",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "AMWA NMOS Audio Channel Mapping Specification: Overview",
+      "url": "https://specs.amwa.tv/new/is-08/latest/Overview/",
+      "text": "AMWA NMOS Audio Channel Mapping Specification: Overview AMWA NMOS Audio Channel Mapping Specification: Overview Documentation Introduction Use of Normative Language Terminology API Structure Inputs Outputs Map Inputs/Outputs View API Interaction Receiver Side Sequence Diagram Sender Side Sequence Diagram AMWA NMOS Audio Channel Mapping Specification: Overview - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content AMWA NMOS Audio Channel Mapping Specification: Overview (c) AMWA 2018, CC Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0) Documentation The documents included in this directory provide additional details and recommendations for implementations of the defined API, and its consumers. Introduction The purpose of this document is to explain how an NMOS compatible system can re-map audio channels. This can take place on a sending device, where the resulting re-mapped audio may be sent out over the network, or a receiving device, where audio received from the network may be re-mapped prior to consumption. The terms 'Node', 'Device', 'Sender' and 'Receiver' will be used extensively throughout this document. Please refer to the core NMOS Technical Overview for definitions of these. This API is intended to be used in conjunction with an IS-04 NMOS Discovery and Registration deployment, however it has been written in such a way to provide useful functionality even in the absence of such a system. This API may also be used on a Device that supports IS-05 NMOS Device Connection Management , but still provides useful functionality when used on Devices where connections are established by other means. Use of Normative Language The documents included in this Directory form a normative part of the specification, along with the API definitions and schemas included in the APIs directory . The key words \"MUST\", \"MUST NOT\", \"REQUIRED\", \"SHALL\", \"SHALL NOT\", \"SHOULD\", \"SHOULD NOT\", \"RECOMMENDED\", \"MAY\", and \"OPTIONAL\" in this document are to be interpreted as described in RFC 2119 . Terminology The API may be used to define a mapping between one or more audio \"Inputs\" and one or more audio \"Outputs\". Inputs and Outputs are resources local to the device, and as such are not published to the registry. An Input can be assigned audio from an NMOS Receiver, or can represent audio sources from elsewhere (e.g a microphone or physical input). Similarly audio routed to an Output can be assigned to an NMOS Source, or can be consumed elsewhere (e.g be routed to a loudspeaker or a physical output). A Device may also wish to direct audio from an Output back into a Device's Input, as a way of expressing complex Device routing limitations. A Device may not be able to arbitrarily route audio from any Input to any Output. As such the API allows the Device it is running on to express these limitations. Inputs and Outputs both have a number of Channels available for use. An Input represents each of the audio tracks assigned to it as a Channel. The number of channels an Input or Output has can be restricted by the Device, and cannot be altered by the client. The relationship between Input channels and Output channels is defined by the \"Map\". Where a given Input is routable to a given Output, it MUST be possible to route any of the Input's channels to any channel of the Output. An Output channel that does not have an Input channel routed to it is said to be \"unrouted\" (sometimes known as \"parked\"). The following shows an example of an IS-08 Map between two eight-channel Inputs and two eight-channel Outputs, represented as a logical wiring diagram and as a routing matrix: Note that: The eight Output A channels are routed as a block to the eight Input A channels. This could be due to hardware limitations on those channels, which can be signalled as a constraint in IS-08 (see below). Channels 7 and 8 of each Output are routed to the same Input A channels. Channels 5 and 6 of Output B are unrouted. The above Map is represented in JSON in the API as below. See Behaviour for more details. \"map\" : { \"OutputA\" : { \"0\" : { \"input\" : \"InputA\" , \"channel_index\" : 0 }, \"1\" : { \"input\" : \"InputA\" , \"channel_index\" : 1 }, ... e t c. ... }, \"OutputB\" : { \"0\" : { \"input\" : \"InputB\" , \"channel_index\" : 0 }, ... e t c. ... \"4\" : { \"input\" : null , \"channel_index\" : null }, ... e t c. ... \"6\" : { \"input\" : \"InputA\" , \"channel_index\" : 6 }, ... e t c. ... } } The API has two representations of the Map. The \"Active\" Map describes the current channel mapping state of the Device. The Map's \"Activations\" represent the intended mapping changes of the Device at future points in time. An \"Activation\" is the process whereby the Active Map transitions to reflect the mapping changes. At the time of activation the underlying audio channel mapping behaviour of the Device transitions to reflect the new state of the Active map. An Activation may either be \"immediate\", \"relatively scheduled\" or \"absolutely scheduled\". Immediate activations are carried out as soon as possible after the request is received and SHOULD be completed before the response is sent. A relatively scheduled activation is carried out after a period of time specified by the client has elapsed. An absolute activation is carried out at a specific time specified by the client. API Structure The API is divided into the following parts: Inputs The inputs resource and its child resources enumerate all of the Inputs, their channels and routing constraints. It also exposes the parent resource, which is used to indicate the origin of the audio associated with that Input. These resources are read only. Outputs The outputs resource and its child resources enumerate all of the Outputs, including restrictions on which Inputs may be routed to an Output, and an optional Source ID, which represents the new NMOS Source created by re-mapping the audio. These resources are read only. Map The map resource has child resources that represent the Active Map and any pending Activati",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "Upgrade Path",
+      "url": "https://specs.amwa.tv/new/is-08/latest/Upgrade%20Path/",
+      "text": "Upgrade Path Upgrade Path Requirements for Channel Mapping APIs Requirements for Channel Mapping clients Performing Upgrades Upgrade Path - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content Upgrade Path (c) AMWA 2018, CC Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0) As is common with web APIs, over time changes will be made to support new use cases and deprecate old ways of working. The NMOS APIs are no different, and have been designed to permit in-service upgrades across a facility which may be running large amounts of equipment with support for different versions of these specifications. API versioning is specified in the APIs documentation, with procedures for handling upgrades described below. Requirements for Channel Mapping APIs Implementers of the Channel Mapping API must support at least one API version, and may support more than one at a time. Requirements for Channel Mapping clients Implementers of Channel Mapping API clients are strongly recommended to support multiple versions of the Channel Mapping API simultaneously in order to ease the upgrade process in live facilities. Performing Upgrades The following procedure is suggested for a live system which needs to migrate between API versions. Upgrade API clients to their new versions, which must support all Channel Mapping API versions you are currently using in your deployment. Upgrade Chanel Mapping API implementations to support the new API version.",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "base-get-200.json",
+      "url": "https://specs.amwa.tv/new/is-08/latest/examples/base-get-200/",
+      "text": "base-get-200.json base-get-200.json base-get-200.json - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content base-get-200.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "Examples",
+      "url": "https://specs.amwa.tv/new/is-08/latest/examples/",
+      "text": "Examples Examples Examples - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content Examples base-get-200.json input-base-get-200.json input-caps-get-200.json input-channels-get-200.json input-parent-get-200.json input-properties-get-200.json inputs-base-get-200.json io-get-200.json map-activations-activation-get-200.json map-activations-get-200.json map-activations-post-200.json map-activations-post-400.json map-activations-post-423.json map-activations-post.json map-active-get-200.json map-active-output-get-200.json map-base-get-200.json output-base-get-200.json output-caps-get-200.json output-channels-get-200.json output-properties-get-200.json output-sourceid-get-200.json outputs-base-get-200.json",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "input-base-get-200.json",
+      "url": "https://specs.amwa.tv/new/is-08/latest/examples/inputs/input-base-get-200/",
+      "text": "input-base-get-200.json input-base-get-200.json input-base-get-200.json - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content input-base-get-200.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "input-caps-get-200.json",
+      "url": "https://specs.amwa.tv/new/is-08/latest/examples/inputs/input-caps-get-200/",
+      "text": "input-caps-get-200.json input-caps-get-200.json input-caps-get-200.json - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content input-caps-get-200.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "input-channels-get-200.json",
+      "url": "https://specs.amwa.tv/new/is-08/latest/examples/inputs/input-channels-get-200/",
+      "text": "input-channels-get-200.json input-channels-get-200.json input-channels-get-200.json - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content input-channels-get-200.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "input-parent-get-200.json",
+      "url": "https://specs.amwa.tv/new/is-08/latest/examples/inputs/input-parent-get-200/",
+      "text": "input-parent-get-200.json input-parent-get-200.json input-parent-get-200.json - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content input-parent-get-200.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "input-properties-get-200.json",
+      "url": "https://specs.amwa.tv/new/is-08/latest/examples/inputs/input-properties-get-200/",
+      "text": "input-properties-get-200.json input-properties-get-200.json input-properties-get-200.json - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content input-properties-get-200.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "inputs-base-get-200.json",
+      "url": "https://specs.amwa.tv/new/is-08/latest/examples/inputs/inputs-base-get-200/",
+      "text": "inputs-base-get-200.json inputs-base-get-200.json inputs-base-get-200.json - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content inputs-base-get-200.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "io-get-200.json",
+      "url": "https://specs.amwa.tv/new/is-08/latest/examples/io-get-200/",
+      "text": "io-get-200.json io-get-200.json io-get-200.json - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content io-get-200.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "map-activations-activation-get-200.json",
+      "url": "https://specs.amwa.tv/new/is-08/latest/examples/map/map-activations-activation-get-200/",
+      "text": "map-activations-activation-get-200.json map-activations-activation-get-200.json map-activations-activation-get-200.json - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content map-activations-activation-get-200.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "map-activations-get-200.json",
+      "url": "https://specs.amwa.tv/new/is-08/latest/examples/map/map-activations-get-200/",
+      "text": "map-activations-get-200.json map-activations-get-200.json map-activations-get-200.json - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content map-activations-get-200.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "map-activations-post.json",
+      "url": "https://specs.amwa.tv/new/is-08/latest/examples/map/map-activations-post/",
+      "text": "map-activations-post.json map-activations-post.json map-activations-post.json - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content map-activations-post.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "map-activations-post-200.json",
+      "url": "https://specs.amwa.tv/new/is-08/latest/examples/map/map-activations-post-200/",
+      "text": "map-activations-post-200.json map-activations-post-200.json map-activations-post-200.json - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content map-activations-post-200.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "map-activations-post-400.json",
+      "url": "https://specs.amwa.tv/new/is-08/latest/examples/map/map-activations-post-400/",
+      "text": "map-activations-post-400.json map-activations-post-400.json map-activations-post-400.json - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content map-activations-post-400.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "map-activations-post-423.json",
+      "url": "https://specs.amwa.tv/new/is-08/latest/examples/map/map-activations-post-423/",
+      "text": "map-activations-post-423.json map-activations-post-423.json map-activations-post-423.json - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content map-activations-post-423.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "map-active-get-200.json",
+      "url": "https://specs.amwa.tv/new/is-08/latest/examples/map/map-active-get-200/",
+      "text": "map-active-get-200.json map-active-get-200.json map-active-get-200.json - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content map-active-get-200.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "map-active-output-get-200.json",
+      "url": "https://specs.amwa.tv/new/is-08/latest/examples/map/map-active-output-get-200/",
+      "text": "map-active-output-get-200.json map-active-output-get-200.json map-active-output-get-200.json - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content map-active-output-get-200.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "map-base-get-200.json",
+      "url": "https://specs.amwa.tv/new/is-08/latest/examples/map/map-base-get-200/",
+      "text": "map-base-get-200.json map-base-get-200.json map-base-get-200.json - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content map-base-get-200.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "output-base-get-200.json",
+      "url": "https://specs.amwa.tv/new/is-08/latest/examples/outputs/output-base-get-200/",
+      "text": "output-base-get-200.json output-base-get-200.json output-base-get-200.json - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content output-base-get-200.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "output-caps-get-200.json",
+      "url": "https://specs.amwa.tv/new/is-08/latest/examples/outputs/output-caps-get-200/",
+      "text": "output-caps-get-200.json output-caps-get-200.json output-caps-get-200.json - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content output-caps-get-200.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "output-channels-get-200.json",
+      "url": "https://specs.amwa.tv/new/is-08/latest/examples/outputs/output-channels-get-200/",
+      "text": "output-channels-get-200.json output-channels-get-200.json output-channels-get-200.json - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content output-channels-get-200.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "output-properties-get-200.json",
+      "url": "https://specs.amwa.tv/new/is-08/latest/examples/outputs/output-properties-get-200/",
+      "text": "output-properties-get-200.json output-properties-get-200.json output-properties-get-200.json - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content output-properties-get-200.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "output-sourceid-get-200.json",
+      "url": "https://specs.amwa.tv/new/is-08/latest/examples/outputs/output-sourceid-get-200/",
+      "text": "output-sourceid-get-200.json output-sourceid-get-200.json output-sourceid-get-200.json - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content output-sourceid-get-200.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "outputs-base-get-200.json",
+      "url": "https://specs.amwa.tv/new/is-08/latest/examples/outputs/outputs-base-get-200/",
+      "text": "outputs-base-get-200.json outputs-base-get-200.json outputs-base-get-200.json - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content outputs-base-get-200.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "AMWA IS-08 NMOS Audio Channel Mapping Specification",
+      "url": "https://specs.amwa.tv/new/is-08/latest/",
+      "text": "AMWA IS-08 NMOS Audio Channel Mapping Specification AMWA IS-08 NMOS Audio Channel Mapping Specification What does it do? Why does it matter? How does it work? Getting started AMWA IS-08 NMOS Audio Channel Mapping Specification - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content AMWA IS-08 NMOS Audio Channel Mapping Specification What does it do? Allows channel-level operations within NMOS environments For example: muting channels, swapping languages… Why does it matter? Provides expected functionality for typical production/broadcast operations Extends usefulness of IS-05 and other NMOS specs. How does it work? Controller gets channel information from sending Node …and sends mapping information to the receiving Node Can also do sender-side mapping Getting started There is more information about the NMOS Specifications and their GitHub repos at https://specs.amwa.tv/nmos .",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "activation-response-schema",
+      "url": "https://specs.amwa.tv/new/is-08/latest/schemas/activation-response-schema/",
+      "text": "activation-response-schema activation-response-schema activation-response-schema - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content activation-response-schema With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "activation-schema",
+      "url": "https://specs.amwa.tv/new/is-08/latest/schemas/activation-schema/",
+      "text": "activation-schema activation-schema activation-schema - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content activation-schema With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "base-schema",
+      "url": "https://specs.amwa.tv/new/is-08/latest/schemas/base-schema/",
+      "text": "base-schema base-schema base-schema - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content base-schema With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "error",
+      "url": "https://specs.amwa.tv/new/is-08/latest/schemas/error/",
+      "text": "error error error - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content error With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "JSON Schemas",
+      "url": "https://specs.amwa.tv/new/is-08/latest/schemas/",
+      "text": "JSON Schemas JSON Schemas JSON Schemas - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content JSON Schemas activation-response-schema activation-schema base-schema error input-base-schema input-caps-response-schema input-channels-response-schema input-parent-response-schema input-properties-schema inputs-outputs-base-schema io-response-schema map-activations-activation-get-response-schema map-activations-get-response-schema map-activations-post-request-schema map-activations-post-response-schema map-active-output-response-schema map-active-response-schema map-base-schema map-entries-schema output-base-schema output-caps-response-schema output-channels-response-schema output-properties-schema output-sourceid-response-schema",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "input-base-schema",
+      "url": "https://specs.amwa.tv/new/is-08/latest/schemas/input-base-schema/",
+      "text": "input-base-schema input-base-schema input-base-schema - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content input-base-schema With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "input-caps-response-schema",
+      "url": "https://specs.amwa.tv/new/is-08/latest/schemas/input-caps-response-schema/",
+      "text": "input-caps-response-schema input-caps-response-schema input-caps-response-schema - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content input-caps-response-schema With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "input-channels-response-schema",
+      "url": "https://specs.amwa.tv/new/is-08/latest/schemas/input-channels-response-schema/",
+      "text": "input-channels-response-schema input-channels-response-schema input-channels-response-schema - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content input-channels-response-schema With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "input-parent-response-schema",
+      "url": "https://specs.amwa.tv/new/is-08/latest/schemas/input-parent-response-schema/",
+      "text": "input-parent-response-schema input-parent-response-schema input-parent-response-schema - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content input-parent-response-schema With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "input-properties-schema",
+      "url": "https://specs.amwa.tv/new/is-08/latest/schemas/input-properties-schema/",
+      "text": "input-properties-schema input-properties-schema input-properties-schema - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content input-properties-schema With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "inputs-outputs-base-schema",
+      "url": "https://specs.amwa.tv/new/is-08/latest/schemas/inputs-outputs-base-schema/",
+      "text": "inputs-outputs-base-schema inputs-outputs-base-schema inputs-outputs-base-schema - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content inputs-outputs-base-schema With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "io-response-schema",
+      "url": "https://specs.amwa.tv/new/is-08/latest/schemas/io-response-schema/",
+      "text": "io-response-schema io-response-schema io-response-schema - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content io-response-schema With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "map-activations-activation-get-response-schema",
+      "url": "https://specs.amwa.tv/new/is-08/latest/schemas/map-activations-activation-get-response-schema/",
+      "text": "map-activations-activation-get-response-schema map-activations-activation-get-response-schema map-activations-activation-get-response-schema - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content map-activations-activation-get-response-schema With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "map-activations-get-response-schema",
+      "url": "https://specs.amwa.tv/new/is-08/latest/schemas/map-activations-get-response-schema/",
+      "text": "map-activations-get-response-schema map-activations-get-response-schema map-activations-get-response-schema - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content map-activations-get-response-schema With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "map-activations-post-request-schema",
+      "url": "https://specs.amwa.tv/new/is-08/latest/schemas/map-activations-post-request-schema/",
+      "text": "map-activations-post-request-schema map-activations-post-request-schema map-activations-post-request-schema - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content map-activations-post-request-schema With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "map-activations-post-response-schema",
+      "url": "https://specs.amwa.tv/new/is-08/latest/schemas/map-activations-post-response-schema/",
+      "text": "map-activations-post-response-schema map-activations-post-response-schema map-activations-post-response-schema - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content map-activations-post-response-schema With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "map-active-output-response-schema",
+      "url": "https://specs.amwa.tv/new/is-08/latest/schemas/map-active-output-response-schema/",
+      "text": "map-active-output-response-schema map-active-output-response-schema map-active-output-response-schema - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content map-active-output-response-schema With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "map-active-response-schema",
+      "url": "https://specs.amwa.tv/new/is-08/latest/schemas/map-active-response-schema/",
+      "text": "map-active-response-schema map-active-response-schema map-active-response-schema - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content map-active-response-schema With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "map-base-schema",
+      "url": "https://specs.amwa.tv/new/is-08/latest/schemas/map-base-schema/",
+      "text": "map-base-schema map-base-schema map-base-schema - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content map-base-schema With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "map-entries-schema",
+      "url": "https://specs.amwa.tv/new/is-08/latest/schemas/map-entries-schema/",
+      "text": "map-entries-schema map-entries-schema map-entries-schema - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content map-entries-schema With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "output-base-schema",
+      "url": "https://specs.amwa.tv/new/is-08/latest/schemas/output-base-schema/",
+      "text": "output-base-schema output-base-schema output-base-schema - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content output-base-schema With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "output-caps-response-schema",
+      "url": "https://specs.amwa.tv/new/is-08/latest/schemas/output-caps-response-schema/",
+      "text": "output-caps-response-schema output-caps-response-schema output-caps-response-schema - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content output-caps-response-schema With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "output-channels-response-schema",
+      "url": "https://specs.amwa.tv/new/is-08/latest/schemas/output-channels-response-schema/",
+      "text": "output-channels-response-schema output-channels-response-schema output-channels-response-schema - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content output-channels-response-schema With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "output-properties-schema",
+      "url": "https://specs.amwa.tv/new/is-08/latest/schemas/output-properties-schema/",
+      "text": "output-properties-schema output-properties-schema output-properties-schema - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content output-properties-schema With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-08"
+    },
+    {
+      "title": "output-sourceid-response-schema",
+      "url": "https://specs.amwa.tv/new/is-08/latest/schemas/output-sourceid-response-schema/",
+      "text": "output-sourceid-response-schema output-sourceid-response-schema output-sourceid-response-schema - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content output-sourceid-response-schema With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-08"
+    }
+  ]
+}

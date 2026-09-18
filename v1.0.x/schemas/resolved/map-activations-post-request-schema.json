@@ -1,0 +1,83 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Activations endpoint",
+  "description": "Add a new activation to the activations list",
+  "type": "object",
+  "additionalPropertes": false,
+  "required": [
+    "activation",
+    "action"
+  ],
+  "properties": {
+    "activation": {
+      "$schema": "http://json-schema.org/draft-04/schema#",
+      "type": "object",
+      "title": "Activation resource",
+      "description": "Parameters concerned with activation of the channel mapping",
+      "additionalProperties": false,
+      "required": [
+        "mode"
+      ],
+      "properties": {
+        "mode": {
+          "description": "Mode of activation: immediate (on message receipt), scheduled_absolute (when internal clock >= requested_time), or scheduled_relative (when internal clock >= time of message receipt + requested_time)",
+          "type": "string",
+          "enum": [
+            "activate_immediate",
+            "activate_scheduled_absolute",
+            "activate_scheduled_relative"
+          ]
+        },
+        "requested_time": {
+          "description": "String formatted TAI timestamp (<seconds>:<nanoseconds>) indicating time (absolute or relative) for activation",
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[0-9]+:[0-9]+$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "action:": {
+      "$schema": "http://json-schema.org/draft-04/schema#",
+      "type": "object",
+      "description": "Describes the map table entries",
+      "title": "Map table entries",
+      "additionalProperties": false,
+      "patternProperties": {
+        "^[a-zA-Z0-9\\-_]+$": {
+          "description": "Unique identifiers of the outputs",
+          "patternProperties": {
+            "^(0|([1-9][0-9]*))$": {
+              "description": "Indexes of channels",
+              "required": [
+                "input",
+                "channel_index"
+              ],
+              "properties": {
+                "input": {
+                  "description": "Unique identifier of the input to which the channel to be routed belongs. null for unrouted.",
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "channel_index": {
+                  "description": "Index of the input channel to be routed. null for unrouted.",
+                  "type": [
+                    "integer",
+                    "null"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
