@@ -10,12 +10,6 @@
         <loc>https://specs.amwa.tv/new/is-08/v1.0.1/2.0.%20APIs/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/is-08/v1.0.1/APIs/</loc>
-      </url>
-      <url>
-        <loc>https://specs.amwa.tv/new/is-08/v1.0.1/APIs/ChannelMappingAPI/</loc>
-      </url>
-      <url>
         <loc>https://specs.amwa.tv/new/is-08/v1.0.1/2.1.%20APIs%20-%20Client%20Side%20Implementation/</loc>
       </url>
       <url>
@@ -34,13 +28,16 @@
         <loc>https://specs.amwa.tv/new/is-08/v1.0.1/5.0.%20Upgrade%20Path/</loc>
       </url>
       <url>
+        <loc>https://specs.amwa.tv/new/is-08/v1.0.1/APIs/</loc>
+      </url>
+      <url>
+        <loc>https://specs.amwa.tv/new/is-08/v1.0.1/APIs/ChannelMappingAPI/</loc>
+      </url>
+      <url>
         <loc>https://specs.amwa.tv/new/is-08/v1.0.1/examples/</loc>
       </url>
       <url>
         <loc>https://specs.amwa.tv/new/is-08/v1.0.1/examples/base-get-200/</loc>
-      </url>
-      <url>
-        <loc>https://specs.amwa.tv/new/is-08/v1.0.1/examples/io-get-200/</loc>
       </url>
       <url>
         <loc>https://specs.amwa.tv/new/is-08/v1.0.1/examples/inputs/input-base-get-200/</loc>
@@ -59,6 +56,9 @@
       </url>
       <url>
         <loc>https://specs.amwa.tv/new/is-08/v1.0.1/examples/inputs/inputs-base-get-200/</loc>
+      </url>
+      <url>
+        <loc>https://specs.amwa.tv/new/is-08/v1.0.1/examples/io-get-200/</loc>
       </url>
       <url>
         <loc>https://specs.amwa.tv/new/is-08/v1.0.1/examples/map/map-activations-activation-get-200/</loc>
