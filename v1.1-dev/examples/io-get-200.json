@@ -1,0 +1,119 @@
+{
+  "inputs":{
+    "input1":{
+      "parent": {
+        "id": "f6b34356-9885-4db8-bdeb-3141e23f443c",
+        "type": "source"
+      },
+      "channels":[
+        {"label": "outA"},
+        {"label": "outB"},
+        {"label": "outC"},
+        {"label": "outD"}
+      ],
+      "caps": {
+        "reordering": false,
+        "block_size": 2
+      },
+      "properties":{
+        "name": "Input 2",
+        "description": "Four channel input 2"
+      }
+    },
+    "input2":{
+      "parent": {
+        "id": "3286c499-3e78-4125-b0e2-d465354d11e6",
+        "type": "receiver"
+      },
+      "channels":[
+        {"label": "FL"},
+        {"label": "FR"},
+        {"label": "LS"},
+        {"label": "RS"},
+        {"label": "C"},
+        {"label": "S"}
+      ],
+      "caps": {
+        "reordering": true,
+        "block_size": 1
+      },
+      "properties":{
+        "name": "5.1 Input",
+        "description": "Surround sound input"
+      }
+    },
+    "input3":{
+      "parent": {
+        "id": null,
+        "type": null
+      },
+      "channels":[
+        {"label": "L"},
+        {"label": "R"}
+      ],
+      "caps": {
+        "reordering": true,
+        "block_size": 1
+      },
+      "properties":{
+        "name": "Stereo Input 1",
+        "description": "Stereo input on rear of unit"
+      }
+    },
+    "input4":{
+      "parent":{
+        "id": "6dea8109-9e27-49e7-81eb-65a74e964414",
+        "type": "source"
+      },
+      "channels":[
+        {"label": "a"},
+        {"label": "b"},
+        {"label": "c"}
+      ],
+      "caps": {
+        "reordering": false,
+        "block_size": 1
+      },
+      "properties":{
+        "name": "Input 4",
+        "description": "RTP Input"
+      }
+    }
+  },
+  "outputs":{
+    "output1":{
+      "source_id": "bdebfc73-6f43-497a-a9c3-c822ea34a4c9",
+      "channels":[
+        {"label": "outA"},
+        {"label": "outB"}
+      ],
+      "caps":{
+        "routable_inputs":[
+          "input1",
+          "input2",
+          "input4"
+        ]
+      },
+      "properties":{
+        "name": "Output 1",
+        "description": "RTP Output One"
+      }
+    },
+    "output2":{
+      "source_id": "491de650-c47e-4b70-9597-72ebbf23372a",
+      "channels":[
+        {"label": "L"},
+        {"label": "R"}
+      ],
+      "caps":{
+        "routable_inputs":[
+          "input3"
+        ]
+      },
+      "properties":{
+        "name": "Stereo Output",
+        "description": "Stereo output on rear of unit"
+      }
+    }
+  }
+}
