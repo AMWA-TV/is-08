@@ -4,10 +4,7 @@
         <loc>https://specs.amwa.tv/new/is-08/v1.0.x/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/Overview/</loc>
-      </url>
-      <url>
-        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/APIs/</loc>
+        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/404/</loc>
       </url>
       <url>
         <loc>https://specs.amwa.tv/new/is-08/v1.0.x/APIs%20-%20Client%20Side%20Implementation/</loc>
@@ -16,22 +13,100 @@
         <loc>https://specs.amwa.tv/new/is-08/v1.0.x/APIs%20-%20Server%20Side%20Implementation/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/Interoperability/</loc>
+        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/APIs/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/Interoperability%20-%20NMOS%20IS-04/</loc>
+        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/APIs/ChannelMappingAPI/</loc>
+      </url>
+      <url>
+        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/APIs/definitions/</loc>
       </url>
       <url>
         <loc>https://specs.amwa.tv/new/is-08/v1.0.x/Behaviour/</loc>
       </url>
       <url>
+        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/Interoperability%20-%20NMOS%20IS-04/</loc>
+      </url>
+      <url>
+        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/Interoperability/</loc>
+      </url>
+      <url>
+        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/Overview/</loc>
+      </url>
+      <url>
         <loc>https://specs.amwa.tv/new/is-08/v1.0.x/Upgrade%20Path/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/APIs/</loc>
+        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/examples/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/APIs/ChannelMappingAPI/</loc>
+        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/examples/base-get-200/</loc>
+      </url>
+      <url>
+        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/examples/inputs/input-base-get-200/</loc>
+      </url>
+      <url>
+        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/examples/inputs/input-caps-get-200/</loc>
+      </url>
+      <url>
+        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/examples/inputs/input-channels-get-200/</loc>
+      </url>
+      <url>
+        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/examples/inputs/input-parent-get-200/</loc>
+      </url>
+      <url>
+        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/examples/inputs/input-properties-get-200/</loc>
+      </url>
+      <url>
+        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/examples/inputs/inputs-base-get-200/</loc>
+      </url>
+      <url>
+        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/examples/io-get-200/</loc>
+      </url>
+      <url>
+        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/examples/map/map-activations-activation-get-200/</loc>
+      </url>
+      <url>
+        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/examples/map/map-activations-get-200/</loc>
+      </url>
+      <url>
+        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/examples/map/map-activations-post-200/</loc>
+      </url>
+      <url>
+        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/examples/map/map-activations-post-400/</loc>
+      </url>
+      <url>
+        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/examples/map/map-activations-post-423/</loc>
+      </url>
+      <url>
+        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/examples/map/map-activations-post/</loc>
+      </url>
+      <url>
+        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/examples/map/map-active-get-200/</loc>
+      </url>
+      <url>
+        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/examples/map/map-active-output-get-200/</loc>
+      </url>
+      <url>
+        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/examples/map/map-base-get-200/</loc>
+      </url>
+      <url>
+        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/examples/outputs/output-base-get-200/</loc>
+      </url>
+      <url>
+        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/examples/outputs/output-caps-get-200/</loc>
+      </url>
+      <url>
+        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/examples/outputs/output-channels-get-200/</loc>
+      </url>
+      <url>
+        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/examples/outputs/output-properties-get-200/</loc>
+      </url>
+      <url>
+        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/examples/outputs/output-sourceid-get-200/</loc>
+      </url>
+      <url>
+        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/examples/outputs/outputs-base-get-200/</loc>
       </url>
       <url>
         <loc>https://specs.amwa.tv/new/is-08/v1.0.x/schemas/</loc>
@@ -107,77 +182,5 @@
       </url>
       <url>
         <loc>https://specs.amwa.tv/new/is-08/v1.0.x/schemas/output-sourceid-response-schema/</loc>
-      </url>
-      <url>
-        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/examples/</loc>
-      </url>
-      <url>
-        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/examples/base-get-200/</loc>
-      </url>
-      <url>
-        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/examples/inputs/input-base-get-200/</loc>
-      </url>
-      <url>
-        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/examples/inputs/input-caps-get-200/</loc>
-      </url>
-      <url>
-        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/examples/inputs/input-channels-get-200/</loc>
-      </url>
-      <url>
-        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/examples/inputs/input-parent-get-200/</loc>
-      </url>
-      <url>
-        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/examples/inputs/input-properties-get-200/</loc>
-      </url>
-      <url>
-        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/examples/inputs/inputs-base-get-200/</loc>
-      </url>
-      <url>
-        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/examples/io-get-200/</loc>
-      </url>
-      <url>
-        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/examples/map/map-activations-activation-get-200/</loc>
-      </url>
-      <url>
-        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/examples/map/map-activations-get-200/</loc>
-      </url>
-      <url>
-        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/examples/map/map-activations-post-200/</loc>
-      </url>
-      <url>
-        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/examples/map/map-activations-post-400/</loc>
-      </url>
-      <url>
-        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/examples/map/map-activations-post-423/</loc>
-      </url>
-      <url>
-        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/examples/map/map-activations-post/</loc>
-      </url>
-      <url>
-        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/examples/map/map-active-get-200/</loc>
-      </url>
-      <url>
-        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/examples/map/map-active-output-get-200/</loc>
-      </url>
-      <url>
-        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/examples/map/map-base-get-200/</loc>
-      </url>
-      <url>
-        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/examples/outputs/output-base-get-200/</loc>
-      </url>
-      <url>
-        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/examples/outputs/output-caps-get-200/</loc>
-      </url>
-      <url>
-        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/examples/outputs/output-channels-get-200/</loc>
-      </url>
-      <url>
-        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/examples/outputs/output-properties-get-200/</loc>
-      </url>
-      <url>
-        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/examples/outputs/output-sourceid-get-200/</loc>
-      </url>
-      <url>
-        <loc>https://specs.amwa.tv/new/is-08/v1.0.x/examples/outputs/outputs-base-get-200/</loc>
       </url>
 </urlset>
