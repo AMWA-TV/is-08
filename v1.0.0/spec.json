@@ -10,5 +10,20 @@
     "v1.0.1"
   ],
   "default_branch": "v1.0.x",
-  "show_in_index": true
+  "show_in_index": true,
+  "intro": {
+    "what_does_it_do": [
+      "Allows channel-level operations within NMOS environments",
+      "For example: muting channels, swapping languages…"
+    ],
+    "why_does_it_matter": [
+      "Provides expected functionality for typical production/broadcast operations",
+      "Extends usefulness of IS-05 and other NMOS specs."
+    ],
+    "how_does_it_work": [
+      "Controller gets channel information from sending Node",
+      "…and sends mapping information to the receiving Node",
+      "Can also do sender-side mapping"
+    ]
+  }
 }
