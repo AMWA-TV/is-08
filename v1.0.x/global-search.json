@@ -3,12 +3,6 @@
   "repository": "AMWA-TV/is-08",
   "documents": [
     {
-      "title": "Page not found",
-      "url": "https://specs.amwa.tv/is-08/latest/404/",
-      "text": "Page not found Page not found Page not found - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content Page not found The page you requested could not be found. Return to the documentation home",
-      "repository": "AMWA-TV/is-08"
-    },
-    {
       "title": "ChannelMappingAPI",
       "url": "https://specs.amwa.tv/is-08/latest/APIs/ChannelMappingAPI/",
       "text": "ChannelMappingAPI ChannelMappingAPI ChannelMappingAPI - AMWA IS-08 NMOS Audio Channel Mapping Specification Skip to content ChannelMappingAPI The Channel Mapping API is exposed by NMOS Devices as a standard control interface for management of audio matrix mapping inside Devices. Open ChannelMappingAPI API documentation",
